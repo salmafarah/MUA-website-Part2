@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // seeded the beutdata 
 const beutMl = require('./models/beautician')
-const beutData = require('./beutData');
+const beutData = require('./beautData');
 
 beutMl.deleteMany({},(err, result) => console.log(result)); 
 
@@ -14,7 +14,7 @@ beutMl.deleteMany({},(err, result) => console.log(result));
 
   // seeded the clientdata 
 const clientMl = require('./models/client')
-const clientData = require('./clientData');
+const clientData = require('./userData');
 
 clientMl.deleteMany({},(err,result) => console.log(result)); 
 
