@@ -19,8 +19,6 @@ function showAll(req, res) {
   if (req.query.typeOfService){
     search.typeOfService = req.query.typeOfService
   }
-  console.log(req.query)
-  console.log(search)
   User.find(search, function(err, beaut){
     res.status(200).json(beaut);
   });
@@ -30,6 +28,7 @@ function showAll(req, res) {
 function showOne(req, res) {
   User.findById(req.params.id, function(err, beaut){
     res.status(200).json(beaut);
+    console.log(req.params.id)
   });
 };
   

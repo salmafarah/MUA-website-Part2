@@ -9,10 +9,9 @@ var userSchema = new Schema({
     beautician: {type: Boolean, default: false},
     location: String, 
     avlDateandTime: String,
-    profileImage: String,
     typeOfService: String,
     price: String, 
-    clientImage: [{type:String}],
+    clientImages: [{type:String}],
     description: String,  
 },{
     timestamps: true

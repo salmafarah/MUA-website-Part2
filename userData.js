@@ -19,7 +19,7 @@ module.exports = [
         beautician: true, 
         price: 50,
         clientImages:['available'],
-        description: "I've been professional nail tech for 20 years",
+        description: "I've been a professional nail tech for the past 20 years",
     }, 
     {
         name: 'Nadifa Abdi',
@@ -50,7 +50,7 @@ module.exports = [
         beautician: true, 
         price: 100,
         clientImages:['avaiable'],
-        description: "I've been in the industry for 10 years and worked with high profile celebrities",
+        description: "Love what I do, and I good at my job.",
     }
 
 ]
