@@ -5,15 +5,15 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
     name: {type: String, required: true},
-    image: {type: String, required: true},
+    image: String,
     beautician: {type: Boolean, default: false },
     location: String, 
     avlDateandTime: String,
     profileImage: String,
     typeOfService: String,
-    price: {type: String, required: true}, 
+    price: String, 
     clientImage: [{type:String}],
-    description: {type: String},  
+    description: String,  
 },{
     timestamps: true
 });
