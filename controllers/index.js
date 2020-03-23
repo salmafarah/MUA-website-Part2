@@ -1,4 +1,4 @@
-const Appt = require('../models/appointments'); 
+const Appt = require('../models/appointment'); 
 const Client = require('../models/user'); 
 const Beut = require('../models/beautician'); 
 

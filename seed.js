@@ -13,18 +13,18 @@ beutMl.deleteMany({},(err, result) => console.log(result));
   });
 
   // seeded the clientdata 
-const clientMl = require('./models/user')
-const clientData = require('./userData');
+const userMl = require('./models/user')
+const userData = require('./userData');
 
-clientMl.deleteMany({},(err,result) => console.log(result)); 
+userMl.deleteMany({},(err,result) => console.log(result)); 
 
-  clientMl.collection.insertMany(clientData, function (err, doc) {
+  userMl.collection.insertMany(userData, function (err, doc) {
       console.log(doc)
       mongoose.connection.close();
   });
 
 // seeded the apptdata 
-const apptMl = require('./models/appointments')
+const apptMl = require('./models/appointment')
 const apptData = require('./apptData');
 
 apptMl.deleteMany({},(err, result) => console.log(result)); 

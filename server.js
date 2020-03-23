@@ -12,9 +12,9 @@ require('./config/database');
 // require('dotenv').config(({ path: path.resolve(__dirname, './.env') })); 
 
 
-var indexRouter = require('./routes/index'); 
-var userRouter = require('./routes/user'); 
-var beauticianRouter = require('./routes/beautician'); 
+var indexRouter = require('./routes/api/index'); 
+var userRouter = require('./routes/api/user'); 
+
 
 
 var app = express();
@@ -30,8 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/beuticians', beauticianRouter);
+app.use('/api/user', userRouter);
+
 
 
 // catch 404 and forward to error handler

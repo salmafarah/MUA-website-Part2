@@ -1,43 +1,65 @@
-const Appt = require('../models/appointments'); 
+const Appt = require('../models/appointment'); 
 const Client = require('../models/user'); 
 const Beaut = require('../models/beautician'); 
 
   module.exports = {
     index,
-    show,
+    showOne,
+    showAll,  
+    showAppt, 
+    deleteOne
 }; 
 
-
+// user will see the search page 
 function index(req, res) {
-  Beaut.find({},function(err,beut) {
-    res.status(200).json(beut);
-  });
+  res.render('MUA/user/search')
 }
 
+// show all the MUAs the user searched for (filter: location, time, date,typeOfService,numberOfClients)
+function showAll(req, res) {
+  Beaut.find(req.query)
+    
+    
+    function(err, beaut){
+    res.status(200).json(beaut);
+  });
+};
 
 
 
 
+//show one MUA profile 
+function showOne(req, res) {
+  Beaut.findById(req.params.id, function(err, beaut){
+    res.status(200).json(beaut);
+  });
+};
+  
 
-// function index(req, res) {
-//     Beut.find({}) 
-//     .then(function(beut){
-//       res.json(beut);
-//     }).catch(function(err){
-//     console.error(err)
-//  }); 
-// }
-
-//   function show(req, res) {
-//     Appt.find({beautician:      )
-//     .then(function( beautician  ){
-//      console.log(beautician)
-//   })  .catch(function(err){
-//       console.error(err)
-//   }); 
+//show all the appts a user has 
+// function showAppt(req, res) {
+//   Appt.findById(user: _id, function(err, appt){
+//     res.status(200).json(appt);
+//   });
 // };
 
-
-function show(req, res) {
-
+function showAppt(req, res) {
+  Appt.find({user: req.params.id})
+  .populate('User') 
+  .populate('Beautician')
+  .exec((err, appt)=> {
+  if (err) {
+    console.log("index error:" + err);
+    res.sendStatus(500);
+  }
+  res.json(appt);
+});
 }
+
+  
+// delete an appt 
+function deleteOne(req, res) {
+  Appt.findByIdAndRemove(req.params.id, function(err, appt){
+    res.status(200).json(appt);
+  });
+};

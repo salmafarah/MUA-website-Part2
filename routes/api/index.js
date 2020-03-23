@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var muaCtrl = require('../controllers/index')
 
-router.get('/', muaCtrl.index);
+router.get('/', function(req, res, next) {
+  res.render('MUA/landingpage');
+});
 
 module.exports = router;
