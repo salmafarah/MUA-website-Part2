@@ -1,5 +1,5 @@
 const Appt = require('../models/appointments'); 
-const Client = require('../models/client'); 
+const Client = require('../models/user'); 
 const Beaut = require('../models/beautician'); 
 
   module.exports = {

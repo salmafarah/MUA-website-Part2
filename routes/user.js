@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userCtrl = require('../controllers/client')
+var userCtrl = require('../controllers/user')
 
 router.get('/', userCtrl.index); //Go to the search page 
 router.get('/:id/beautician', userCtrl.showAll); // show all the MUAs the user searched for 

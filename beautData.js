@@ -2,8 +2,8 @@
 module.exports = [
     {
         name: 'Lul Jumale', 
-        avatime: [3],
-        avadate: [new Date(2020, 02, 13)],
+        avltime: [3],
+        avldate: [new Date(2020, 02, 13)],
         image: 'avaiable',
         location: ['Toronto, ON, Canada'], 
         typeOfService: ['nail technician'], 
@@ -14,8 +14,8 @@ module.exports = [
     }, 
     {
         name: 'Nadifa Abdi', 
-        avatime:[5] ,
-        avadate: [new Date(2020, 04, 09)],
+        avltime:[5] ,
+        avldate: [new Date(2020, 04, 09)],
         image: 'avaiable',
         location: ['Waterloo, ON, Canada'], 
         typeOfService: ['Hair stylist', 'Makeup Artist'],
@@ -26,8 +26,8 @@ module.exports = [
     }, 
     {
         name: 'Ilhan Omar',
-        avatime: [3],
-        avadate: [new Date(2020, 11, 10)], 
+        avltime: [3],
+        avldate: [new Date(2020, 11, 10)], 
         image: 'avaiable',
         location: ['Toronto, ON, Canada'], 
         typeOfService:['Makeup Artist', 'Esthetician'],
@@ -38,8 +38,8 @@ module.exports = [
     }, 
     {
         name: 'Sade Watkins', 
-        avatime:[9],
-        avadate: [new Date(2020, 10, 3)],
+        avltime:[9],
+        avldate: [new Date(2020, 10, 3)],
         image: 'avaiable',
         location: ['Mississauga, ON, Canada'], 
         typeOfService: ['Waxing', 'tanning', 'massages'],

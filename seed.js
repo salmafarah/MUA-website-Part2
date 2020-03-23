@@ -13,7 +13,7 @@ beutMl.deleteMany({},(err, result) => console.log(result));
   });
 
   // seeded the clientdata 
-const clientMl = require('./models/client')
+const clientMl = require('./models/user')
 const clientData = require('./userData');
 
 clientMl.deleteMany({},(err,result) => console.log(result)); 

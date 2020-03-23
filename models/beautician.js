@@ -6,8 +6,8 @@ var Schema = mongoose.Schema;
 
 var beautSchema = new Schema({
     name: {type: String, required: true},
-    avatime: [{type: Number, required: true}],
-    avadate:[{type: Date, required: true}],
+    avltime: [{type: Number, required: true}],
+    avldate:[{type: Date, required: true}],
     image: {type: String, required: true},
     location: {type: String, required: true}, 
     typeOfService: [{type:String, required: true}],

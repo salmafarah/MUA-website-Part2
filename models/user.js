@@ -3,12 +3,12 @@ var Schema = mongoose.Schema;
 
 //client model
 
-var clientSchema = new Schema({
+var userSchema = new Schema({
     name: {type: String, required: true},
     image: {type: String, required: true},
 },{
     timestamps: true
 });
 
-const Client = mongoose.model('Client', clientSchema);
-module.exports = Client;
+const User = mongoose.model('User', userSchema);
+module.exports = User;
