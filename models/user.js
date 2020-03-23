@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     name: {type: String, required: true},
     image: String,
-    beautician: {type: Boolean, default: false },
+    beautician: {type: Boolean, default: false},
     location: String, 
     avlDateandTime: String,
     profileImage: String,

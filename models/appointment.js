@@ -18,7 +18,7 @@ var muaSchema = new Schema({
     date: {type: Date, required: true},
     location: {type: String, required: true}, 
     user: {type: Schema.Types.ObjectId, ref:'User'},
-    user:{type: Schema.Types.ObjectId, ref:'Beautician'},
+    beautician:{type: Schema.Types.ObjectId, ref:'User'},
     review: [ReviewSchema], 
     message: [MessageSchema]
 },{

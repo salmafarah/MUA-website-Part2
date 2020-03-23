@@ -1,6 +1,7 @@
 //required mongoose 
 const mongoose = require('mongoose');
 
+require('./config/database');
 
   // seeded the userdata 
 const userMl = require('./models/user')

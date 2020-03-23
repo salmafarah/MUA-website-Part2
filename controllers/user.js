@@ -1,52 +1,44 @@
 const Appt = require('../models/appointment'); 
-const Client = require('../models/user'); 
-const Beaut = require('../models/beautician'); 
+const User = require('../models/user'); 
 
   module.exports = {
-    index,
+    // index,
     showOne,
     showAll,  
     showAppt, 
     deleteOne
 }; 
 
-// user will see the search page 
-function index(req, res) {
-  res.render('MUA/user/search')
-}
 
-// show all the MUAs the user searched for (filter: location, time, date,typeOfService,numberOfClients)
+// show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {
-  Beaut.find(req.query)
-    
-    
-    function(err, beaut){
+  let search = {}; 
+  if (req.query.location){
+    search.location = req.query.location
+  }
+  if (req.query.typeOfService){
+    search.typeOfService = req.query.typeOfService
+  }
+  console.log(req.query)
+  console.log(search)
+  User.find(search, function(err, beaut){
     res.status(200).json(beaut);
   });
 };
 
-
-
-
 //show one MUA profile 
 function showOne(req, res) {
-  Beaut.findById(req.params.id, function(err, beaut){
+  User.findById(req.params.id, function(err, beaut){
     res.status(200).json(beaut);
   });
 };
   
 
 //show all the appts a user has 
-// function showAppt(req, res) {
-//   Appt.findById(user: _id, function(err, appt){
-//     res.status(200).json(appt);
-//   });
-// };
-
 function showAppt(req, res) {
   Appt.find({user: req.params.id})
-  .populate('User') 
-  .populate('Beautician')
+  .populate('user') 
+  .populate('beautician')
   .exec((err, appt)=> {
   if (err) {
     console.log("index error:" + err);

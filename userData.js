@@ -10,6 +10,48 @@ module.exports = [
     }, 
     {
         name: 'Hassan Black'
+    }, 
+    {
+        name: 'Lul Jumale', 
+        image: 'available',
+        location: 'Toronto', 
+        typeOfService: 'Nail technician', 
+        beautician: true, 
+        price: 50,
+        clientImages:['available'],
+        description: "I've been professional nail tech for 20 years",
+    }, 
+    {
+        name: 'Nadifa Abdi',
+        image: 'available',
+        location: 'Waterloo', 
+        typeOfService: 'Hair stylist',
+        beautician: true, 
+        price: 100,
+        clientImages:['available'],
+        description: "I've been in the industry for 10 years and worked with high profile celebrities",
+
+    }, 
+    {
+        name: 'Ilhan Omar',
+        image: 'available',
+        location: 'Toronto', 
+        typeOfService:'Makeup Artist',
+        beautician: true, 
+        price: 150,
+        clientImages:['avaiable'],
+        description: "Can start anytime",
+    }, 
+    {
+        name: 'Sade Watkins', 
+        image: 'available',
+        location: 'Mississauga', 
+        typeOfService: 'Waxing',
+        beautician: true, 
+        price: 100,
+        clientImages:['avaiable'],
+        description: "I've been in the industry for 10 years and worked with high profile celebrities",
     }
 
 ]
+

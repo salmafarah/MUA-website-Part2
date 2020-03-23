@@ -1,14 +1,3 @@
-// time: {type: Number, required: true},
-// date: {type: Date, required: true},
-// location: {type: String, required: true}, 
-// user: {type: Schema.Types.ObjectId, ref:'User'},
-// beautician:{type: Schema.Types.ObjectId, ref:'Beautician'},
-// review: [ReviewSchema], 
-// message: [MessageSchema]
-
-
-
-
 module.exports = [
     {
         time: 4,
