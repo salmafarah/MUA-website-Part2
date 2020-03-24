@@ -9,8 +9,8 @@ const userData = require('./userData');
 
 userMl.deleteMany({},(err,result) => console.log(result)); 
 
-  userMl.collection.insertMany(userData, function (err, doc) {
-      console.log(doc)
+  userMl.create(userData, function (err, user) {
+      console.log(user)
       mongoose.connection.close();
   });
 
@@ -20,7 +20,7 @@ const apptData = require('./apptData');
 
 apptMl.deleteMany({},(err, result) => console.log(result)); 
 
-  apptMl.collection.insertMany(apptData, function (err, doc) {
-      console.log(doc)
+  apptMl.create(apptData, function (err,appt ) {
+    console.log(appt)
       mongoose.connection.close();
   });

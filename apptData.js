@@ -1,21 +1,24 @@
 module.exports = [
     {
         location: 'Toronto', 
-        user: 'Samia Farah',
-        beautician: 'Lul jumale', 
+        user: 
+        beautician: '5e792bd74629b1a05ba2c28a', //lul
     }, 
     {
         location: 'Waterloo',
-        user: 'Samia Farah', //samia5e77dc561ee5ee83df1f45d0
-        beautician:'Nadifa Abdi' //nadifa5e77dc5f80a53183e9a2c588
+        user: '5e792bd74629b1a05ba2c287',// john 
+        beautician:'5e792bd74629b1a05ba2c28b', //nadifa 
     }, 
     {
         location: 'Toronto', 
-        beautician:'Ilhan Omar'
+        user: '5e792bd74629b1a05ba2c288', // Bod 
+        beautician:'5e792bd74629b1a05ba2c28c', //ilhan 
+
     }, 
     {
         location: 'Mississauga', 
-        beautician:'Sade Watkins'
+        user: '5e792bd74629b1a05ba2c289', // hassan 
+        beautician:'5e792bd74629b1a05ba2c28d'//sade 
     }, 
 
 ]

@@ -13,7 +13,7 @@ const MessageSchema = new Schema({
 });
 
 //appt model
-var muaSchema = new Schema({
+var apptSchema = new Schema({
     location: {type: String, required: true}, 
     user: {type: Schema.Types.ObjectId, ref:'User'},
     beautician:{type: Schema.Types.ObjectId, ref:'User'},
@@ -23,6 +23,6 @@ var muaSchema = new Schema({
   timestamps: true
 });
 
-const Appt = mongoose.model('Appointment', muaSchema);
+const Appt = mongoose.model('Appointment', apptSchema);
 
 module.exports = Appt; 
