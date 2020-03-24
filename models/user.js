@@ -11,7 +11,7 @@ var userSchema = new Schema({
     avlDateandTime: String,
     typeOfService: String,
     price: String, 
-    clientImages: [{type:String}],
+    clientImages:[{type:String}],
     description: String,  
 },{
     timestamps: true

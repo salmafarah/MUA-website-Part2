@@ -12,12 +12,12 @@ const apptMl = require('./models/appointment')
 userMl.deleteMany({}, (err, user) => {
   console.log('removed all users');
   userMl.create(userData, function (err, users) {
-    console.log('created new users')
-    console.log(users)
+    console.log('created new users');
+    console.log(users);
 
-    apptMl.deleteMany({}, (err, user) => {
+  apptMl.deleteMany({}, (err, user) => {
       console.log('removed all appts');
-        
+
       let apptData = [
         {
           location: 'Toronto',
@@ -40,14 +40,15 @@ userMl.deleteMany({}, (err, user) => {
           beautician: users[7]._id
         }
       ]
-      
       apptMl.create(apptData, (err, appts) => {
         console.log('created appointments')
         console.log(appts)
       })
-    });    
-  });
-});
+    })
+  })
+}); 
+
+
 
 
 

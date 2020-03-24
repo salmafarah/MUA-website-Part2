@@ -5,10 +5,8 @@ const User = require('../models/user');
     // index,
     showOne,
     showAll,  
-    // showAppt, 
+    showAppt, 
     deleteAppt, 
-    create, 
-    update, 
     createBeaut,
     updateBeaut, 
     deleteBeaut
@@ -53,32 +51,40 @@ function showOne(req, res) {
   
 
 //show all the appts a user has 
-// function showAppt(req, res){
-//   Appt.find({user: req.params.id})
-//   console.log({user:req.params.id})
-//   .populate('user') 
-//   .populate('beautician')
-//     .exec((err, appt)=> {
-//     if (err) {
-//       console.log("index error:" + err);
-//     res.sendStatus(500);
-//   }
-//     res.json(appt);
-//   });
-// }
+function showAppt(req, res){
+  Appt.find({user:req.params.id})
+  .populate('user') 
+  .populate('beautician')
+    .exec((err, appt)=> {
+    if (err) {
+      console.log("index error:" + err);
+    res.sendStatus(500);
+  }
+    res.json(appt);
+  });
+}
 
   
 // delete an appt 
 function deleteAppt(req, res) {
-  Appt.findByIdAndRemove(req.params.id,function(err, appt){
-    res.status(200).json(appt);
+  Appt.findByIdAndRemove(req.params.id)
+  .populate('user') 
+  .populate('beautician')
+    .exec((err, appt)=> {
+    if (err) {
+      console.log("delete error:" + err);
+    res.sendStatus(500);
+    }
+    res.json(appt);
   });
-};
+}
 
+ // res.redirect(`/${user._id}/appt`) //this would take the user back to their appt page
+ 
 
 //create the beautician profile 
 function createBeaut(req, res) {
-  req.body.beautician = !!req.body.beautician;
+  req.body.beautician = true;
     User.create(req.params.id)
     .then(beaut => {
       res.status(200).json(beaut);
@@ -116,7 +122,7 @@ function deleteBeaut(req, res) {
   })
   .catch(err => {
     if (err) {
-      console.log("update error: " + err);
+      console.log("delete error: " + err);
     }
     res.sendStatus(500)
   });

@@ -50,7 +50,7 @@ module.exports = [
         beautician: true, 
         price: 100,
         clientImages:['avaiable'],
-        description: "Love what I do, and I good at my job.",
+        description: "Love what I do, and I'm good at my job.",
     }
 
 ]
