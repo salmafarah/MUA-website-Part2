@@ -1,5 +1,6 @@
 //required mongoose 
 const mongoose = require('mongoose');
+// require('dotenv').config(); 
 
 require('./config/database');
 
@@ -23,7 +24,7 @@ userMl.deleteMany({}, (err, user) => {
           location: 'Toronto',
           user: users[0]._id,
           beautician: users[4]._id,
-          review: reviews[0].id
+
         },
         {
           location:'Waterloo',

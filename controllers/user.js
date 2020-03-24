@@ -76,19 +76,19 @@ function deleteAppt(req, res) {
     res.sendStatus(500);
     }
     res.json(appt);
+     // res.redirect(`/${user._id}/appt`) //this would take the user back to their appt page
   });
 }
 
- // res.redirect(`/${user._id}/appt`) //this would take the user back to their appt page
- 
 
+ 
 //create the beautician profile 
 function createBeaut(req, res) {
   req.body.beautician = true;
     User.create(req.params.id)
     .then(beaut => {
       res.status(200).json(beaut);
-      // res.redirect(`/beautician/${beut._id}`) //this would be the route 
+      // res.redirect(`/beautician/${beut._id}`) //this would take the user to their profile page
     })
     .catch(err => {
       if (err) {
