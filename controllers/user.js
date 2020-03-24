@@ -54,20 +54,18 @@ function showOne(req, res) {
 
 //show all the appts a user has 
 // function showAppt(req, res){
- 
-
-  Appt.find({user: req.params.id})
-  console.log({user:req.params.id})
-  .populate('user') 
-  .populate('beautician')
-    .exec((err, appt)=> {
-    if (err) {
-      console.log("index error:" + err);
-    res.sendStatus(500);
-  }
-    res.json(appt);
-  });
-}
+//   Appt.find({user: req.params.id})
+//   console.log({user:req.params.id})
+//   .populate('user') 
+//   .populate('beautician')
+//     .exec((err, appt)=> {
+//     if (err) {
+//       console.log("index error:" + err);
+//     res.sendStatus(500);
+//   }
+//     res.json(appt);
+//   });
+// }
 
   
 // delete an appt 
@@ -84,7 +82,7 @@ function createBeaut(req, res) {
     User.create(req.params.id)
     .then(beaut => {
       res.status(200).json(beaut);
-      // res.redirect(`/beautician/${beut._id}`)
+      // res.redirect(`/beautician/${beut._id}`) //this would be the route 
     })
     .catch(err => {
       if (err) {
@@ -114,7 +112,7 @@ function deleteBeaut(req, res) {
   User.findByIdAndRemove(req.params.id)
   .then(beaut => {
     res.status(200).json(beaut);
-    res.redirect(`/`)
+    // res.redirect(`/`) // it would redirect to the homepage 
   })
   .catch(err => {
     if (err) {
