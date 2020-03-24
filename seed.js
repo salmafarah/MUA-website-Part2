@@ -7,7 +7,7 @@ require('./config/database');
 const userMl = require('./models/user')
 const userData = require('./userData');
 const apptMl = require('./models/appointment')
-// const apptData = require('./apptData');
+
 
 userMl.deleteMany({}, (err, user) => {
   console.log('removed all users');
@@ -22,12 +22,22 @@ userMl.deleteMany({}, (err, user) => {
         {
           location: 'Toronto',
           user: users[0]._id,
+          beautician: users[4]._id
+        },
+        {
+          location:'Waterloo',
+          user: users[1]._id,
           beautician: users[5]._id
         },
         {
-          location: 'Waterloo',
-          user: users[1]._id,
+          location:'Toronto',
+          user: users[2]._id,
           beautician: users[6]._id
+        },
+        {
+          location:'Mississauga',
+          user: users[3]._id,
+          beautician: users[7]._id
         }
       ]
       
@@ -43,20 +53,4 @@ userMl.deleteMany({}, (err, user) => {
 
 
 
-// userMl.deleteMany({},(err,result) => console.log(result)); 
 
-//   userMl.create(userData, function (err, user) {
-//       console.log(user)
-//       mongoose.connection.close();
-//   });
-
-// // seeded the apptdata 
-// const apptMl = require('./models/appointment')
-// const apptData = require('./apptData');
-
-// apptMl.deleteMany({},(err, result) => console.log(result)); 
-
-//   apptMl.create(apptData, function (err,appt ) {
-//     console.log(appt)
-//       mongoose.connection.close();
-//   });
