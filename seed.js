@@ -6,7 +6,7 @@ require('./config/database');
   // seeded data 
 const userMl = require('./models/user')
 const userData = require('./userData');
-const apptMl = require('./models/appointment')
+const apptMl = require('./models/appointment');
 
 
 userMl.deleteMany({}, (err, user) => {
@@ -22,7 +22,8 @@ userMl.deleteMany({}, (err, user) => {
         {
           location: 'Toronto',
           user: users[0]._id,
-          beautician: users[4]._id
+          beautician: users[4]._id,
+          review: reviews[0].id
         },
         {
           location:'Waterloo',
@@ -41,8 +42,8 @@ userMl.deleteMany({}, (err, user) => {
         }
       ]
       apptMl.create(apptData, (err, appts) => {
-        console.log('created appointments')
-        console.log(appts)
+        console.log('created appointments');
+        console.log(appts);
       })
     })
   })
