@@ -10,7 +10,7 @@ const User = require('../models/user');
     createBeaut,
     updateBeaut, 
     deleteBeaut,
-    createReview,
+    // createReview,
 }; 
 
 //shows the API doc page 
@@ -82,27 +82,17 @@ function deleteAppt(req, res) {
   });
 };
 
-// {
-  // location: req.body.location,
-  // typeOfService: 
-  // beautician: true,
-
-//create the beautician profile 
+//create a beautician profile
 function createBeaut(req, res) {
-  req.body.beautician = !! 
-    User.findByIdAndUpdate(req.params.id,req.body, {new: true})
-    .then(beaut => {
-      res.status(200).json(beaut);
-      // res.redirect(`/beautician/${beut._id}`) //this would take the user to their profile page
+  req.body.beautician = true
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(beautician => {
+      res.json(beautician)
     })
     .catch(err => {
-      if (err) {
-        console.log("create error: " + err);
-      }
-      res.redirect(`/beautician`)
-
-    });
-  }; 
+      res.status(500).json({ error: 'Oh No' })
+    })
+}
 
 //update a beautician profile 
 function updateBeaut(req, res) {
@@ -141,15 +131,15 @@ function deleteBeaut(req, res) {
 
 
 
-function createReview(req, res) {
-  User.findByIdAndUpdate(req.params.id, {review: req.body.review}, {new: true})
-  .then(review => {
-    res.status(200).json(review);
-  })
-  .catch(err => {
-    if (err) {
-    console.log("creating a review error: " + err);
-  }
-    res.sendStatus(500)
-  });
-};
+// function createReview(req, res) {
+//   User.findByIdAndUpdate(req.params.id, {review: req.body.review}, {new: true})
+//   .then(review => {
+//     res.status(200).json(review);
+//   })
+//   .catch(err => {
+//     if (err) {
+//     console.log("creating a review error: " + err);
+//   }
+//     res.sendStatus(500)
+//   });
+// } 

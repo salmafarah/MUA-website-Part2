@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 require('./config/database');
 
-  // seeded data 
+// seeded data 
 const userMl = require('./models/user')
 const userData = require('./userData');
 const apptMl = require('./models/appointment');
@@ -13,11 +13,11 @@ const apptMl = require('./models/appointment');
 userMl.deleteMany({}, (err, user) => {
   console.log('removed all users');
   userMl.create(userData, function (err, users) {
-    console.log('created new users');
-    console.log(users);
+  console.log('created new users');
+  console.log(users);
 
   apptMl.deleteMany({}, (err, user) => {
-      console.log('removed all appts');
+    console.log('removed all appts');
 
       let apptData = [
         {
