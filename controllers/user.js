@@ -134,9 +134,15 @@ function deleteBeaut(req, res) {
 }; 
 
 
-// creating a review 
+// // creating a review 
+// const newReview = new User({
+//   review: req.body.review, 
+// }) 
+
+
+
 function createReview(req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  User.findByIdAndUpdate(req.params.id, {review: req.body.review}, {new: true})
   .then(review => {
     res.status(200).json(review);
   })

@@ -14,8 +14,9 @@ router.put('/newbeautician/:id', userCtrl.createBeaut) // create the beautician 
 router.put('/newbeautician/:id', userCtrl.updateBeaut) //the beautician can update their profile 
 router.delete('/newbeautician/:id', userCtrl.deleteBeaut)//delete progit addfile 
 
-// router.get('/review/:id/edit', userCtrl.showReview) // show the beautician profile to add a review
-router.put('/newbeautician/:id/review/:id', userCtrl.createReview) // updating the beautician profile to add a review
+// router.get('/review/:id/newform', userCtrl.showReview) // shows the users their review page 
+router.post('review/:id', userCtrl.createReview)//creates a review on the users review page and the beauticians profile 
+router.put('/newbeautician/:id/review/:id', userCtrl.updateReview) // updates the users review page and the beautician profile
 
 
 module.exports = router;

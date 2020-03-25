@@ -43,12 +43,12 @@ body {
   
   .right {
     right: 0;
-    
+    margin-right: auto;
   }
 
   .collapsible {
-    background-color: #777;
-    color: white;
+    background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -59,7 +59,7 @@ body {
   }
   
   .active, .collapsible:hover {
-    background-color: #555;
+    background-color: red;
   }
   
   .content {
@@ -67,8 +67,6 @@ body {
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+    font-size: 20px; 
   }
 
-.img {
-
-}

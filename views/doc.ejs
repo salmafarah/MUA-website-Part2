@@ -45,7 +45,7 @@
             avlDateandTime: String,
             typeOfService: String,
             price: String, 
-            clientImages:[{type:String}],
+            clientImages: [{type:String}],
             description: String, 
             review: [ReviewSchema],
         },{
@@ -60,7 +60,7 @@
         var apptSchema = new Schema({
             location: {type: String, required: true}, 
             user: {type: Schema.Types.ObjectId, ref:'User'},
-            beautician:{type: Schema.Types.ObjectId, ref:'User'},
+            beautician: {type: Schema.Types.ObjectId, ref:'User'},
         },{
             timestamps: true
         });
