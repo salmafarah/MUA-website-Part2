@@ -3,6 +3,7 @@ const User = require('../models/user');
 const Reviews = require ('../models/reviews')
 
   module.exports = {
+    test,
     index,
     showOne,
     showAll,  
@@ -22,6 +23,20 @@ const Reviews = require ('../models/reviews')
 function index(req, res) {
  res.render('doc')
 }
+
+function test(req,res){
+  User.find({})
+    .then(user => {
+      res.status(200).json(user);
+  })
+    .catch(err => {
+      if (err) {
+        console.log("query error: " + err);
+      }
+      res.sendStatus(500)
+  })
+}
+
 
 // show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {

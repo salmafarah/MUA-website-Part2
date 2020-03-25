@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var userCtrl = require('../../controllers/user');
-
+router.get('/', userCtrl.test)
 router.get('/doc', userCtrl.index) // shows the API doc page 
 // router.get('/', userCtrl.search) // The search page 
 router.get('/search', userCtrl.showAll) // The user would be able to see all the beauticians they searched for 
@@ -20,17 +20,5 @@ router.get('/beautician-reviews/:id', userCtrl.showAllRevBeaut) // shows all the
 router.post('/user-reviews/:id', userCtrl.createReview)//creates a review on the users review page 
 router.put('/user-reviews/:id/edit/:rev_id', userCtrl.updateReview) // updates the users review page and the beautician profile
 
-// POST /reviews
 
-// {
-//     user: id,
-//     beautician: id,
-//     content: String
-// }
-
-// GET /user-reviews
-// GET /beautician-reviews
-
-// Review.find({ user: id })
-// Review.find({ beautician: id })
 module.exports = router;
