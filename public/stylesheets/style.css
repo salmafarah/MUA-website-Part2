@@ -2,49 +2,50 @@
   box-sizing: border-box;
 }
   
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
-}
-
-  h2{
-    margin: 0;
-    padding: 0;
-    font-family: 'Spicy Rice', cursive;
-    color:#ff9999; 
-    text-align: center;
-    font-size: 7em;
-    font-weight: 10px;
+  body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden; 
   }
 
-  p{
-    font-size: 2em;
-    text-align: center;
-  }
+    h2{
+      margin: 0;
+      padding: 0;
+      font-family: 'Spicy Rice', cursive;
+      color:#ff9999; 
+      text-shadow: 2px 2px black;
+      text-align: center;
+      font-size: 7em;
+      font-weight: 10px;
+    }
 
-  .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .left {
-    left: 0;
-    background-image: url('https://imgur.com/4BdTsA0.jpg');
-    background-size: cover; 
-  }
-  
-  .paths {
-    background-image: linear-gradient(-90deg,#d9ccff,#f2ccff,#f9e6ff);
-    color: black;
-  }
+    p{
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+    
+    .left {
+      left: 0;
+      background-image: url('https://imgur.com/4BdTsA0.jpg');
+      background-size: cover; 
+    }
+    
+    .paths {
+      background-image: linear-gradient(-90deg,#d9ccff,#f2ccff,#f9e6ff);
+      color: black;
+    }
 
 
 
@@ -52,41 +53,52 @@ body {
 
 
 
-  .right {
-    right: 0;
-    margin-right: auto;
-  }
+    .right {
+      right: 0;
+      margin-right: auto;
+    }
 
-  .collapsible {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.5em;
-  }
+    .collapsible {
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.5em;
+    }
 
-  .models{
-    background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
-    color: black;
-  }
-  
-  /* .active, .collapsible:hover {
-    background-color: wheat; 
-  } */
-  
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-    font-size: 20px; 
-  }
+    .models{
+      background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
+      color: black;
+    }
+    
+    /* .active, .collapsible:hover {
+      background-color: wheat; 
+    } */
+    
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      font-size: 20px; 
+    }
 
-.left-side {
-  text-align: left;
-  font-family: 'Spicy Rice', cursive;
-  color:#e6ccff; 
-  margin-top: 0;
-}
+    .left-side {
+      text-align: left;
+      font-family: 'Spicy Rice', cursive;
+      color: #df80ff; 
+      text-shadow: 2px 2px black;
+      margin-top: 0;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .user {
+      font-size: 50px; 
+    }
+
+    .method {
+      font-family: 'Spicy Rice', cursive;
+      font-size: 2em;
+    }

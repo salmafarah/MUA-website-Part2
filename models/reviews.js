@@ -8,6 +8,8 @@ const ReviewSchema = new Schema({
     beautician:{type: Schema.Types.ObjectId, ref:'User'},
     content: String, 
     rating: {type: Number, required: false},
+},{
+    timestamps: true
 });
 
 

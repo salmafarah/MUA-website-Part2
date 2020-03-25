@@ -14,7 +14,7 @@ var apptSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref:'User'},
     beautician:{type: Schema.Types.ObjectId, ref:'User'},
 },{
-  timestamps: true
+    timestamps: true
 });
 
 const Appt = mongoose.model('Appointment', apptSchema);

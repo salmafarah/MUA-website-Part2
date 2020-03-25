@@ -14,19 +14,28 @@
         
 
 <div class="split left">
-    <div class="centered">
-    <p class="left-side"><span>User</span> Everything about the USER</p>
-    <button type="button" class="collapsible paths">Review Model</button>
-      <div class="content">
-      <pre class="prettyprint">
-        const ReviewSchema = new Schema({
-              user: {type: Schema.Types.ObjectId, ref:'User'},
-              beautician:{type: Schema.Types.ObjectId, ref:'User'},
-              content: String, 
-              rating: {type: Number, required: false},
-        });
-      </pre>
+  <div class="centered">
+    <p class="left-side"><span class="user">User</span> --- Everything about the USER</p>
+      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/ --- This route would take the user to the search page</button>
+        <div class="content">
+        <pre>
+        The user would be able to search for a beautician 
+        by location and type of service. 
+        </pre>
+      </div>
+  </div>
 </div>
+
+
+<div class="split left">
+  <div class="centered">
+      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/search --- This route would show the users sreach results</button>
+        <div class="content">
+      <pre class="prettyprint">
+       
+        
+      </pre>
+      </div>
     </div>
   </div>
 
@@ -56,56 +65,55 @@
       <p> Digital Beauty was created to give beauticians and their clients a professional platform to conduct business.<p>
       <p> This API document was created to demonstrate the functionality of the website. There are 3 models: User, Appointment, and Review.</p>
 
-      <button type="button" class="collapsible models">Review Model</button>
-      <div class="content">
-      <pre class="prettyprint">
-        const ReviewSchema = new Schema({
-              user: {type: Schema.Types.ObjectId, ref:'User'},
-              beautician:{type: Schema.Types.ObjectId, ref:'User'},
-              content: String, 
-              rating: {type: Number, required: false},
-        });
-      </pre>
-</div>
     <button type="button" class="collapsible models">User Model</button>
     <div class="content">
     <pre class="prettyprint">
-        var userSchema = new Schema({
-            name: {type: String, required: true},
-            image: String,
-            beautician: {type: Boolean, default: false},
-            location: String, 
-            avlDateandTime: String,
-            typeOfService: String,
-            price: String, 
-            clientImages: [{type:String}],
-            description: String, 
-        },{
-            timestamps: true
-        });
-    </pre>
- </div>
+      var userSchema = new Schema({
+        name: {type: String, required: true},
+        image: String,
+        beautician: {type: Boolean, default: false},
+        location: String, 
+        avlDateandTime: String,
+        typeOfService: String,
+        price: String, 
+        clientImages:[{type:String}],
+        description: String, 
+      },{
+        timestamps: true
+    });
+      </pre>
+      </div>
 
     <button type="button" class="collapsible models">Appointment Model</button>
     <div class="content">
     <pre class="prettyprint">
-        var apptSchema = new Schema({
-            location: {type: String, required: true}, 
-            user: {type: Schema.Types.ObjectId, ref:'User'},
-            beautician: {type: Schema.Types.ObjectId, ref:'User'},
-            review:{type: Schema.Types.ObjectId, ref:'Reviews'},
-        },{
-            timestamps: true
-        });
+      var apptSchema = new Schema({
+        location: {type: String, required: true}, 
+        user: {type: Schema.Types.ObjectId, ref:'User'},
+        beautician:{type: Schema.Types.ObjectId, ref:'User'},
+      },{
+        timestamps: true
+    });
+    </pre>
+ </div>
+
+    <button type="button" class="collapsible models">Reviews Model</button>
+    <div class="content">
+    <pre class="prettyprint">
+      const ReviewSchema = new Schema({
+        user: {type: Schema.Types.ObjectId, ref:'User'},
+        beautician:{type: Schema.Types.ObjectId, ref:'User'},
+        content: String, 
+        rating: {type: Number, required: false},
+      },{
+        timestamps: true
+    });
     </pre>
 </div>
 
 <div class="img">
-
 <img src="https://imgur.com/Nnu0Gtn.jpg">
-
 </div>
-
 </body>
 
 
