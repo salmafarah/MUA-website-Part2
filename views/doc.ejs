@@ -15,8 +15,39 @@
 
 <div class="split left">
     <div class="centered">
+    <p class="left-side"><span>User</span> Everything about the USER</p>
+    <button type="button" class="collapsible paths">Review Model</button>
+      <div class="content">
+      <pre class="prettyprint">
+        const ReviewSchema = new Schema({
+              user: {type: Schema.Types.ObjectId, ref:'User'},
+              beautician:{type: Schema.Types.ObjectId, ref:'User'},
+              content: String, 
+              rating: {type: Number, required: false},
+        });
+      </pre>
+</div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="split right">
@@ -25,16 +56,18 @@
       <p> Digital Beauty was created to give beauticians and their clients a professional platform to conduct business.<p>
       <p> This API document was created to demonstrate the functionality of the website. There are 3 models: User, Appointment, and Review.</p>
 
-      <button type="button" class="collapsible">Review Model</button>
+      <button type="button" class="collapsible models">Review Model</button>
       <div class="content">
       <pre class="prettyprint">
         const ReviewSchema = new Schema({
-            content: String, 
-            rating: {type: Number, required: false},
+              user: {type: Schema.Types.ObjectId, ref:'User'},
+              beautician:{type: Schema.Types.ObjectId, ref:'User'},
+              content: String, 
+              rating: {type: Number, required: false},
         });
       </pre>
 </div>
-    <button type="button" class="collapsible">User Model</button>
+    <button type="button" class="collapsible models">User Model</button>
     <div class="content">
     <pre class="prettyprint">
         var userSchema = new Schema({
@@ -47,20 +80,20 @@
             price: String, 
             clientImages: [{type:String}],
             description: String, 
-            review: [ReviewSchema],
         },{
             timestamps: true
         });
     </pre>
  </div>
 
-    <button type="button" class="collapsible">Appointment Model</button>
+    <button type="button" class="collapsible models">Appointment Model</button>
     <div class="content">
     <pre class="prettyprint">
         var apptSchema = new Schema({
             location: {type: String, required: true}, 
             user: {type: Schema.Types.ObjectId, ref:'User'},
             beautician: {type: Schema.Types.ObjectId, ref:'User'},
+            review:{type: Schema.Types.ObjectId, ref:'Reviews'},
         },{
             timestamps: true
         });
@@ -99,19 +132,6 @@
 
 
 
-    // var coll = document.getElementsByClassName("collapsible");
-    // var i;
-    // for (i = 0; i < coll.length; i++) {
-    //   coll[i].addEventListener("click", function() {
-    //     this.classList.toggle("active");
-    //     var content = this.nextElementSibling;
-    //     if (content.style.display === "block") {
-    //       content.style.display = "none";
-    //     } else {
-    //       content.style.display = "block";
-    //     }
-    //   });
-    // }
 
 </script>
 </html>

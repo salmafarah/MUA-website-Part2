@@ -14,21 +14,23 @@ router.put('/newbeautician/:id', userCtrl.createBeaut) // create the beautician 
 router.put('/newbeautician/:id', userCtrl.updateBeaut) //the beautician can update their profile 
 router.delete('/newbeautician/:id', userCtrl.deleteBeaut)//delete progit addfile 
 
-// router.get('/reviews/:id/newform', userCtrl.showReview) // shows the users their review page 
-// router.post('review/:id', userCtrl.createReview)//creates a review on the users review page and the beauticians profile 
-// router.put('/newbeautician/:id/review/:id', userCtrl.updateReview) // updates the users review page and the beautician profile
+router.get('/user-reviews/:id', userCtrl.showAllRevUser) // show the user all their review page 
+// router.get('/user-reviews/newForm', userCtrl.showReviewPage) // shows the users their review page 
+router.get('/beautician-reviews/:id', userCtrl.showAllRevBeaut) // shows all the beautician reviews  
+router.post('/user-reviews/:id', userCtrl.createReview)//creates a review on the users review page 
+router.put('/user-reviews/:id/edit/:rev_id', userCtrl.updateReview) // updates the users review page and the beautician profile
 
-POST /reviews
+// POST /reviews
 
-{
-    user: id,
-    beautician: id,
-    content: String
-}
+// {
+//     user: id,
+//     beautician: id,
+//     content: String
+// }
 
-GET /user-reviews
-GET /beautician-reviews
+// GET /user-reviews
+// GET /beautician-reviews
 
-Review.find({ user: id })
-Review.find({ beautician: id })
+// Review.find({ user: id })
+// Review.find({ beautician: id })
 module.exports = router;

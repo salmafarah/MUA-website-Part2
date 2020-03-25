@@ -41,14 +41,23 @@ body {
     background-size: cover; 
   }
   
+  .paths {
+    background-image: linear-gradient(-90deg,#d9ccff,#f2ccff,#f9e6ff);
+    color: black;
+  }
+
+
+
+
+
+
+
   .right {
     right: 0;
     margin-right: auto;
   }
 
   .collapsible {
-    background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
-    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -57,10 +66,15 @@ body {
     outline: none;
     font-size: 1.5em;
   }
-  
-  .active, .collapsible:hover {
-    background-color: red;
+
+  .models{
+    background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
+    color: black;
   }
+  
+  /* .active, .collapsible:hover {
+    background-color: wheat; 
+  } */
   
   .content {
     padding: 0 18px;
@@ -70,3 +84,9 @@ body {
     font-size: 20px; 
   }
 
+.left-side {
+  text-align: left;
+  font-family: 'Spicy Rice', cursive;
+  color:#e6ccff; 
+  margin-top: 0;
+}

@@ -23,7 +23,7 @@ userMl.deleteMany({}, (err, user) => {
         {
           location: 'Toronto',
           user: users[0]._id,
-          beautician: users[4]._id,
+          beautician: users[4]._id
 
         },
         {

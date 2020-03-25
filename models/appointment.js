@@ -7,12 +7,12 @@ var Schema = mongoose.Schema;
 //     content: String
 // });
 
+
 //appt model
 var apptSchema = new Schema({
     location: {type: String, required: true}, 
     user: {type: Schema.Types.ObjectId, ref:'User'},
     beautician:{type: Schema.Types.ObjectId, ref:'User'},
-    // message: [MessageSchema]
 },{
   timestamps: true
 });
