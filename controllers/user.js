@@ -2,16 +2,21 @@ const Appt = require('../models/appointment');
 const User = require('../models/user'); 
 
   module.exports = {
-    // index,
+    index,
     showOne,
     showAll,  
     showAppt, 
     deleteAppt, 
     createBeaut,
     updateBeaut, 
-    deleteBeaut
+    deleteBeaut,
+    createReview,
 }; 
 
+//shows the API doc page 
+function index(req, res) {
+ res.render('doc')
+}
 
 // show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {
@@ -34,7 +39,6 @@ function showAll(req, res) {
   });
 }; 
 
-
 //show one beautician profile 
 function showOne(req, res) {
   User.findById(req.params.id)
@@ -49,7 +53,6 @@ function showOne(req, res) {
   });
 }; 
   
-
 //show all the appts a user has 
 function showAppt(req, res){
   Appt.find({user:req.params.id})
@@ -62,9 +65,8 @@ function showAppt(req, res){
   }
     res.json(appt);
   });
-}
+};
 
-  
 // delete an appt 
 function deleteAppt(req, res) {
   Appt.findByIdAndRemove(req.params.id)
@@ -78,14 +80,17 @@ function deleteAppt(req, res) {
     res.json(appt);
      // res.redirect(`/${user._id}/appt`) //this would take the user back to their appt page
   });
-}
+};
 
+// {
+  // location: req.body.location,
+  // typeOfService: 
+  // beautician: true,
 
- 
 //create the beautician profile 
 function createBeaut(req, res) {
-  req.body.beautician = true;
-    User.create(req.params.id)
+  req.body.beautician = !! 
+    User.findByIdAndUpdate(req.params.id,req.body, {new: true})
     .then(beaut => {
       res.status(200).json(beaut);
       // res.redirect(`/beautician/${beut._id}`) //this would take the user to their profile page
@@ -128,4 +133,17 @@ function deleteBeaut(req, res) {
   });
 }; 
 
- 
+
+// creating a review 
+function createReview(req, res) {
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(review => {
+    res.status(200).json(review);
+  })
+  .catch(err => {
+    if (err) {
+    console.log("creating a review error: " + err);
+  }
+    res.sendStatus(500)
+  });
+};

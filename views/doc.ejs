@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css"> 
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<!-- Compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+<!-- Compiled and minified JavaScript -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+        
+
+<div class="split left">
+    <div class="centered">
+    </div>
+  </div>
+
+
+<div class="split right">
+    <div>
+      <h2>Digital Beauty</h2>
+      <p> Digital Beauty was created to give beauticians and their clients a professional platform to conduct business.<p>
+      <p> This API document was created to demonstrate the functionality of the website. There are 3 models: User, Appointment, and Review.</p>
+
+      <button type="button" class="collapsible">Review Model</button>
+      <div class="content">
+      <pre class="prettyprint">
+        const ReviewSchema = new Schema({
+            content: String, 
+            rating: {type: Number, required: false},
+        });
+      </pre>
+</div>
+    <button type="button" class="collapsible">User Model</button>
+    <div class="content">
+    <pre class="prettyprint">
+        var userSchema = new Schema({
+            name: {type: String, required: true},
+            image: String,
+            beautician: {type: Boolean, default: false},
+            location: String, 
+            avlDateandTime: String,
+            typeOfService: String,
+            price: String, 
+            clientImages:[{type:String}],
+            description: String, 
+            review: [ReviewSchema],
+        },{
+            timestamps: true
+        });
+    </pre>
+ </div>
+
+    <button type="button" class="collapsible">Appointment Model</button>
+    <div class="content">
+    <pre class="prettyprint">
+        var apptSchema = new Schema({
+            location: {type: String, required: true}, 
+            user: {type: Schema.Types.ObjectId, ref:'User'},
+            beautician:{type: Schema.Types.ObjectId, ref:'User'},
+        },{
+            timestamps: true
+        });
+    </pre>
+</div>
+
+<div class="img">
+
+<img src="https://imgur.com/Nnu0Gtn.jpg">
+
+</div>
+
+</body>
+
+
+
+
+
+
+
+<script>
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+
+
+    // var coll = document.getElementsByClassName("collapsible");
+    // var i;
+    // for (i = 0; i < coll.length; i++) {
+    //   coll[i].addEventListener("click", function() {
+    //     this.classList.toggle("active");
+    //     var content = this.nextElementSibling;
+    //     if (content.style.display === "block") {
+    //       content.style.display = "none";
+    //     } else {
+    //       content.style.display = "block";
+    //     }
+    //   });
+    // }
+
+</script>
+</html>

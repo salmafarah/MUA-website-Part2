@@ -1,8 +1,19 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-//user model
+//review model
+const ReviewSchema = new Schema({
+    content: String, 
+    rating: {type: Number, required: false},
+});
 
+//message model
+const MessageSchema = new Schema({
+    content: String
+});
+
+
+//user model
 var userSchema = new Schema({
     name: {type: String, required: true},
     image: String,
@@ -12,7 +23,9 @@ var userSchema = new Schema({
     typeOfService: String,
     price: String, 
     clientImages:[{type:String}],
-    description: String,  
+    description: String, 
+    review: [ReviewSchema],
+    message: [MessageSchema]
 },{
     timestamps: true
 });
