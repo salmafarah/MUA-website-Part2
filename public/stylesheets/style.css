@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Spicy Rice', cursive;
-      color:#ff9999; 
+      color:#ffb3ff; 
       text-shadow: 2px 2px black;
       text-align: center;
       font-size: 7em;
@@ -24,6 +24,7 @@
     p{
       font-size: 2em;
       text-align: center;
+      color:black;
     }
 
     .split {
@@ -37,21 +38,20 @@
     }
     
     .left {
-      left: 0;
+      left: 0;  
       background-image: url('https://imgur.com/4BdTsA0.jpg');
       background-size: cover; 
     }
     
     .paths {
-      background-image: linear-gradient(-90deg,#d9ccff,#f2ccff,#f9e6ff);
+      background-image: linear-gradient(-90deg,#ffa366,#ffb380,#ffc299);
       color: black;
     }
 
-
-
-
-
-
+  .beaut{ 
+    background-image: linear-gradient(-90deg,#ffb3b3,#ffcccc,#ffe6e6);
+    color: black; 
+  }
 
     .right {
       right: 0;
@@ -65,11 +65,13 @@
       border: none;
       text-align: left;
       outline: none;
-      font-size: 1.5em;
+      font-size: 12px;
+      border: black 0.1px solid;
     }
 
     .models{
-      background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc);
+      /* background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc); */
+      background-image: linear-gradient(-90deg,#ffb3ff,#ffccff,#ffe6ff);
       color: black;
     }
     
@@ -87,15 +89,22 @@
 
     .left-side {
       text-align: left;
-      font-family: 'Spicy Rice', cursive;
-      color: #df80ff; 
-      text-shadow: 2px 2px black;
       margin-top: 0;
-      font-size: 30px;
       margin-bottom: 10px;
     }
     .user {
       font-size: 50px; 
+      color:#ff884d;
+      font-family: 'Spicy Rice', cursive;
+      text-shadow: 2px 2px black;
+    }
+
+    .user2 {
+      font-size: 50px; 
+      color:  #ff8080; 
+      font-family: 'Spicy Rice', cursive;
+      text-shadow: 2px 2px black;
+
     }
 
     .method {

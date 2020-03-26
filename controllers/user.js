@@ -3,7 +3,7 @@ const User = require('../models/user');
 const Reviews = require ('../models/reviews')
 
   module.exports = {
-    test,
+    // test,
     index,
     showOne,
     showAll,  
@@ -24,18 +24,18 @@ function index(req, res) {
  res.render('doc')
 }
 
-function test(req,res){
-  User.find({})
-    .then(user => {
-      res.status(200).json(user);
-  })
-    .catch(err => {
-      if (err) {
-        console.log("query error: " + err);
-      }
-      res.sendStatus(500)
-  })
-}
+// function test(req,res){
+//   User.find({})
+//     .then(user => {
+//       res.status(200).json(user);
+//   })
+//     .catch(err => {
+//       if (err) {
+//         console.log("query error: " + err);
+//       }
+//       res.sendStatus(500)
+//   })
+// }
 
 
 // show all the beautician the user searched for (filter: location,typeOfService)
@@ -145,22 +145,30 @@ function deleteBeaut(req, res) {
 
 // creating a review
 function createReview(req, res) {
-  Reviews.create(req.body).then(function(review) {
-    res.status(201).json(review);
-  });
-}
+  Reviews.create(req.body)
+  .then(review => {
+    res.status(200).json(review);
+})
+  .catch(err => {
+    if (err) {
+      console.log("create error: " + err);
+    }
+    res.sendStatus(500)
+});
+}; 
+
 
 //show all the user reviews 
 function showAllRevUser(req,res){
   Reviews.find({user:req.params.id})
     .populate('user') 
     .populate('beautician')
-    .exec((err, appt)=> {
+    .exec((err, review)=> {
       if (err) {
       console.log("index error:" + err);
       res.sendStatus(500);
   }
-    res.json(appt);
+    res.json(review);
   });
 }
 
@@ -169,26 +177,27 @@ function showAllRevBeaut(req, res){
   Reviews.find({beautician:req.params.id})
     .populate('user') 
     .populate('beautician')
-    .exec((err, appt)=> {
+    .exec((err, review)=> {
       if (err) {
       console.log("index error:" + err);
       res.sendStatus(500);
   }
-      res.json(appt);
+      res.json(review);
   });
 };
 
 //update a review profile 
 function updateReview(req, res) {
+  req.body.user = req.params.user_id
   Reviews.findByIdAndUpdate(req.params.rev_id, req.body, {new: true})
   .populate('user') 
   .populate('beautician')
-  .exec((err, appt)=> {
+  .exec((err, review)=> {
     if (err) {
     console.log("index error:" + err);
     res.sendStatus(500);
 }
-    res.json(appt);
+    res.json(review);
 });
 };
 

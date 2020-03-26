@@ -15,29 +15,316 @@
 
 <div class="split left">
   <div class="centered">
-    <p class="left-side"><span class="user">User</span> --- Everything about the USER</p>
-      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/ --- This route would take the user to the search page</button>
+    <p class="left-side"><span class="user">User ____Everything about the USER</span></p>
+      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/____ This route would take the user to the search page</button>
         <div class="content">
         <pre>
+        Result: 
         The user would be able to search for a beautician 
         by location and type of service. 
         </pre>
       </div>
+      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/search/___This route would display the users search results</button>
+      <div class="content">
+    <pre class="prettyprint">
+     Result: location: Toronto typeOfService: Makeup Artist
+     [
+    {
+        "beautician": true,
+        "clientImages": [
+            "avaiable"
+        ],
+        "_id": "5e7be8ee4524a5f2682f1184",
+        "name": "Ilhan Omar",
+        "image": "available",
+        "location": "Toronto",
+        "typeOfService": "MakeupArtist",
+        "price": "150",
+        "description": "Can start anytime",
+        "createdAt": "2020-03-25T23:27:42.730Z",
+        "updatedAt": "2020-03-25T23:27:42.730Z",
+        "__v": 0
+    }
+  ]
+    </pre>
+    </div>
+    <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/:id___This route would display one beautician</button>
+    <div class="content">
+  <pre class="prettyprint">
+    Result: 
+    {
+      "beautician": true,
+      "clientImages": [
+          "avaiable"
+      ],
+      "_id": "5e7be8ee4524a5f2682f1185",
+      "name": "Sade Watkins",
+      "image": "available",
+      "location": "Mississauga",
+      "typeOfService": "Waxing",
+      "price": "100",
+      "description": "Love what I do, and I'm good at my job.",
+      "createdAt": "2020-03-25T23:27:42.730Z",
+      "updatedAt": "2020-03-25T23:27:42.730Z",
+      "__v": 0
+  }
+  </pre>
   </div>
+
+  <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/:id/appt___This route would display the users appointments</button>
+  <div class="content">
+<pre class="prettyprint">
+  Result: 
+  [
+  {
+      "_id": "5e7be8ee4524a5f2682f1189",
+      "location": "Mississauga",
+      "user": {
+          "beautician": false,
+          "clientImages": [],
+          "_id": "5e7be8ee4524a5f2682f1181",
+          "name": "Hassan Black",
+          "createdAt": "2020-03-25T23:27:42.730Z",
+          "updatedAt": "2020-03-25T23:27:42.730Z",
+          "__v": 0
+      },
+      "beautician": {
+          "beautician": true,
+          "clientImages": [
+              "avaiable"
+          ],
+          "_id": "5e7be8ee4524a5f2682f1185",
+          "name": "Sade Watkins",
+          "image": "available",
+          "location": "Mississauga",
+          "typeOfService": "Waxing",
+          "price": "100",
+          "description": "Love what I do, and I'm good at my job.",
+          "createdAt": "2020-03-25T23:27:42.730Z",
+          "updatedAt": "2020-03-25T23:27:42.730Z",
+          "__v": 0
+      },
+      "createdAt": "2020-03-25T23:27:42.760Z",
+      "updatedAt": "2020-03-25T23:27:42.760Z",
+      "__v": 0
+  }
+]
+</pre>
+</div>
+<button type="button" class="collapsible paths"><span class="method">DELETE</span>/api/user/appt/:id___This route would cancel a users appointment</button>
+<div class="content">
+<pre class="prettyprint">
+  Result:
+  null
+</pre>
+</div>
+<div class="centered">
+  <p class="left-side"><span class="user2">Beautician ____Everything about the USER</span></p>
+  <button type="button" class="collapsible beaut"><span class="method">GET</span>/api/user/newbeautician/:id___This route would display the beautician form </button>
+  <div class="content">
+  <pre class="prettyprint">
+  Result: 
+  The beautician form is rendered. 
+  </pre>
+  </div>
+  <button type="button" class="collapsible beaut"><span class="method">Put</span>/api/user/newbeautician/:id___This route would allow the user to post their services</button>
+  <div class="content">
+  <pre class="prettyprint">
+  Result: typeOfService: Hair stylist
+  {
+    "beautician": true,
+    "clientImages": [],
+    "_id": "5e7be8ee4524a5f2682f117e",
+    "name": "Samia Farah",
+    "createdAt": "2020-03-25T23:27:42.730Z",
+    "updatedAt": "2020-03-26T01:39:46.757Z",
+    "__v": 0,
+    "typeOfService": "Hairstylist"
+}
+  </pre>
+  </div>
+  <button type="button" class="collapsible beaut"><span class="method">Put</span>/api/user/newbeautician/:id___This route would update a beautician's profile</button>
+  <div class="content">
+  <pre class="prettyprint">
+    Result: typeOfService: Tattoo Artist
+    {
+      "beautician": true,
+      "clientImages": [],
+      "_id": "5e7be8ee4524a5f2682f117e",
+      "name": "Samia Farah",
+      "createdAt": "2020-03-25T23:27:42.730Z",
+      "updatedAt": "2020-03-26T01:51:38.944Z",
+      "__v": 0,
+      "typeOfService": "Tattoo Artist"
+}
+  </pre>
+  </div>
+  <button type="button" class="collapsible beaut"><span class="method">Put</span>/api/user/newbeautician/:id___This route would delete a beautician's profile</button>
+  <div class="content">
+  <pre class="prettyprint">
+  Result: 
+  null
+  </pre>
+  </div>
+  <div class="centered">
+    <p class="left-side"><span class="user2">Reviews ____Everything about the Reviews</span></p>
+    <button type="button" class="collapsible beaut"><span class="method">GET</span>/api/user/user-reviews/newForm___This route would display the review form</button>
+    <div class="content">
+    <pre class="prettyprint">
+    Result: 
+    The review form is rendered. 
+    
+    </pre>
+    </div>
+    <button type="button" class="collapsible beaut"><span class="method">GET</span>/api/user/user-reviews/:id___This route would display all the reviews a user has made</button>
+    <div class="content">
+    <pre class="prettyprint">
+      Result: 
+    {
+      "_id": "5e7c0e785f12cefdc1584098",
+      "user": "5e7be8ee4524a5f2682f117e",
+      "beautician": "5e7be8ee4524a5f2682f1182",
+      "content": "One of my best experiences",
+      "rating": 5,
+      "createdAt": "2020-03-26T02:07:52.016Z",
+      "updatedAt": "2020-03-26T02:07:52.016Z",
+      "__v": 0
+  }
+    </pre>
+    </div>
+
+    <button type="button" class="collapsible beaut"><span class="method">GET</span>/api/user/beautician-reviews/:id___This route would display all the reviews for one beautician</button>
+    <div class="content">
+    <pre class="prettyprint">
+      Result: 
+    [
+      {
+          "_id": "5e7c0e785f12cefdc1584098",
+          "user": null,
+          "beautician": {
+              "beautician": true,
+              "clientImages": [
+                  "available"
+              ],
+              "_id": "5e7be8ee4524a5f2682f1182",
+              "name": "Lul Jumale",
+              "image": "available",
+              "location": "Toronto",
+              "typeOfService": "Nailtechnician",
+              "price": "50",
+              "description": "I've been a professional 
+                              nail tech for the past 20 years",
+              "createdAt": "2020-03-25T23:27:42.730Z",
+              "updatedAt": "2020-03-25T23:27:42.730Z",
+              "__v": 0
+          },
+          "content": "One of my best experiences",
+          "rating": 5,
+          "createdAt": "2020-03-26T02:07:52.016Z",
+          "updatedAt": "2020-03-26T02:07:52.016Z",
+          "__v": 0
+      },
+      {
+          "_id": "5e7c12c2e89b8bff2c05afac",
+          "user": {
+              "beautician": false,
+              "clientImages": [],
+              "_id": "5e7be8ee4524a5f2682f117f",
+              "name": "John Smith",
+              "createdAt": "2020-03-25T23:27:42.730Z",
+              "updatedAt": "2020-03-25T23:27:42.730Z",
+              "__v": 0
+          },
+          "beautician": {
+              "beautician": true,
+              "clientImages": [
+                  "available"
+              ],
+              "_id": "5e7be8ee4524a5f2682f1182",
+              "name": "Lul Jumale",
+              "image": "available",
+              "location": "Toronto",
+              "typeOfService": "Nailtechnician",
+              "price": "50",
+              "description": "I've been a professional 
+                              nail tech for the past 20 years",
+              "createdAt": "2020-03-25T23:27:42.730Z",
+              "updatedAt": "2020-03-25T23:27:42.730Z",
+              "__v": 0
+          },
+          "content": "Wasn't very happy with the service",
+          "rating": 3,
+          "createdAt": "2020-03-26T02:26:11.011Z",
+          "updatedAt": "2020-03-26T02:26:11.011Z",
+          "__v": 0
+      }
+ ] 
+    </pre>
+    </div>
+
+    <button type="button" class="collapsible beaut"><span class="method">POST</span>/api/user/user-reviews/:id___This route would allow a user to create a review</button>
+    <div class="content">
+    <pre class="prettyprint">
+      Result: 
+      {
+        "_id": "5e7c1d221dad4e0048c5967b",
+        "user": "5e7be8ee4524a5f2682f117e",
+        "beautician": "5e7be8ee4524a5f2682f1185",
+        "content": "Wasn't very happy",
+        "rating": 2,
+        "createdAt": "2020-03-26T03:10:26.401Z",
+        "updatedAt": "2020-03-26T03:10:26.401Z",
+        "__v": 0
+    }
+    </pre>
+   </div>
+
+    <button type="button" class="collapsible beaut"><span class="method">POST</span>/api/user/user-reviews/:id___This route would allow a user to update a review</button>
+    <div class="content">
+    <pre class="prettyprint">
+      Result: 
+      {
+        "_id": "5e7c1d221dad4e0048c5967b",
+        "user": "5e7be8ee4524a5f2682f117e",
+        "beautician": {
+            "beautician": true,
+            "clientImages": [
+                "avaiable"
+            ],
+            "_id": "5e7be8ee4524a5f2682f1185",
+            "name": "Sade Watkins",
+            "image": "available",
+            "location": "Mississauga",
+            "typeOfService": "Waxing",
+            "price": "100",
+            "description": "Love what I do, and I'm good at my job.",
+            "createdAt": "2020-03-25T23:27:42.730Z",
+            "updatedAt": "2020-03-25T23:27:42.730Z",
+            "__v": 0
+        },
+        "content": "It was great.",
+        "rating": 4,
+        "createdAt": "2020-03-26T03:10:26.401Z",
+        "updatedAt": "2020-03-26T03:52:39.607Z",
+        "__v": 0
+    }
+    </pre>
+   </div>
+
+
+
+
+
+
+
+
+
 </div>
 
 
-<div class="split left">
-  <div class="centered">
-      <button type="button" class="collapsible paths"><span class="method">GET</span>/api/user/search --- This route would show the users sreach results</button>
-        <div class="content">
-      <pre class="prettyprint">
-       
-        
-      </pre>
-      </div>
-    </div>
-  </div>
+
+
+
 
 
 
@@ -63,7 +350,7 @@
     <div>
       <h2>Digital Beauty</h2>
       <p> Digital Beauty was created to give beauticians and their clients a professional platform to conduct business.<p>
-      <p> This API document was created to demonstrate the functionality of the website. There are 3 models: User, Appointment, and Review.</p>
+      <p> This API document was created to demonstrate the functionality of the website. There are 3 models: User, Appointment, and Reviews.</p>
 
     <button type="button" class="collapsible models">User Model</button>
     <div class="content">
@@ -111,10 +398,7 @@
     </pre>
 </div>
 
-<div class="img">
-<img src="https://imgur.com/Nnu0Gtn.jpg">
-</div>
-</body>
+
 
 
 
