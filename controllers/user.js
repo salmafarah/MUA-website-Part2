@@ -6,7 +6,8 @@ const Reviews = require ('../models/reviews')
     // test,
     index,
     showOne,
-    showAll,  
+    showAll, 
+    createAppt, 
     showAppt, 
     deleteAppt, 
     createBeaut,
@@ -23,19 +24,6 @@ const Reviews = require ('../models/reviews')
 function index(req, res) {
  res.render('doc')
 }
-
-// function test(req,res){
-//   User.find({})
-//     .then(user => {
-//       res.status(200).json(user);
-//   })
-//     .catch(err => {
-//       if (err) {
-//         console.log("query error: " + err);
-//       }
-//       res.sendStatus(500)
-//   })
-// }
 
 
 // show all the beautician the user searched for (filter: location,typeOfService)
@@ -72,7 +60,21 @@ function showOne(req, res) {
     res.sendStatus(500)
   });
 }; 
-  
+
+// creating an appt 
+function createAppt(req, res) {
+  Appt.create(req.body)
+  .then(appt => {
+    res.status(200).json(appt);
+})
+  .catch(err => {
+    if (err) {
+      console.log("create error: " + err);
+    }
+    res.sendStatus(500)
+});
+}; 
+
 //show all the appts a user has 
 function showAppt(req, res){
   Appt.find({user:req.params.id})

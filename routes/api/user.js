@@ -6,6 +6,7 @@ router.get('/doc', userCtrl.index) // shows the API doc page
 // router.get('/', userCtrl.search) // The search page 
 router.get('/search', userCtrl.showAll) // The user would be able to see all the beauticians they searched for 
 router.get('/:id', userCtrl.showOne) //Show one beautician
+router.post('/:id/appt', userCtrl.createAppt) // user can create an appt  
 router.get('/:id/appt', userCtrl.showAppt) // show all appt made by a user 
 router.delete('/appt/:id', userCtrl.deleteAppt)//cancel an appt 
 

@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
   
-  body {
+body {
       width: 100%;
       height: 100%;
       margin: 0px;
@@ -10,24 +10,24 @@
       overflow-x: hidden; 
   }
 
-    h2{
-      margin: 0;
-      padding: 0;
-      font-family: 'Spicy Rice', cursive;
-      color:#ffb3ff; 
-      text-shadow: 2px 2px black;
-      text-align: center;
-      font-size: 7em;
-      font-weight: 10px;
-    }
+h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Prata', serif;
+    color:#e19d9d;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-size: 7em;
+    font-weight: 10px;
+  }
+ 
+p {
+   font-size: 30px;
+   text-align: center;
+   color:#808080; 
+}
 
-    p{
-      font-size: 2em;
-      text-align: center;
-      color:black;
-    }
-
-    .split {
+.split {
       height: 100%;
       width: 50%;
       position: fixed;
@@ -35,79 +35,59 @@
       top: 0;
       overflow-x: hidden;
       padding-top: 20px;
-    }
+  }
     
-    .left {
-      left: 0;  
-      background-image: url('https://imgur.com/4BdTsA0.jpg');
-      background-size: cover; 
-    }
-    
-    .paths {
-      background-image: linear-gradient(-90deg,#ffa366,#ffb380,#ffc299);
-      color: black;
-    }
-
-  .beaut{ 
-    background-image: linear-gradient(-90deg,#ffb3b3,#ffcccc,#ffe6e6);
-    color: black; 
+.left {
+    left: 0;  
+    background-image: url("https://imgur.com/VCMeYxz.jpg");
+    background-size:cover;
   }
 
-    .right {
-      right: 0;
-      margin-right: auto;
-    }
+.beaut{ 
+  background-color: #f0c1c1; 
+  color: black; 
+}
 
-    .collapsible {
+.right {
+    right: 0;
+    margin-right: auto;
+    background-color:white;
+  }
+
+.collapsible {
       cursor: pointer;
       padding: 18px;
       width: 100%;
       border: none;
       text-align: left;
       outline: none;
-      font-size: 12px;
+      font-size: 20px;
       border: black 0.1px solid;
-    }
+  }
 
-    .models{
-      /* background-image: linear-gradient(-90deg,#ff9999,#ffb399,#ffcccc); */
-      background-image: linear-gradient(-90deg,#ffb3ff,#ffccff,#ffe6ff);
-      color: black;
-    }
-    
-    /* .active, .collapsible:hover {
-      background-color: wheat; 
-    } */
-    
-    .content {
+.content {
       padding: 0 18px;
       display: none;
       overflow: hidden;
-      background-color: #f1f1f1;
-      font-size: 20px; 
-    }
+      font-size: 16px;  
+  }
 
-    .left-side {
+  .left-side {
       text-align: left;
       margin-top: 0;
       margin-bottom: 10px;
-    }
-    .user {
-      font-size: 50px; 
-      color:#ff884d;
-      font-family: 'Spicy Rice', cursive;
-      text-shadow: 2px 2px black;
-    }
+  }
 
-    .user2 {
-      font-size: 50px; 
-      color:  #ff8080; 
-      font-family: 'Spicy Rice', cursive;
-      text-shadow: 2px 2px black;
+.user {
+    font-size: 40px;
+    color:#C0C0C0;
+    font-family: 'Prata', serif;
+    text-shadow: 1px 1px black;
+    font-weight: bold;
+  }
 
-    }
-
-    .method {
-      font-family: 'Spicy Rice', cursive;
-      font-size: 2em;
-    }
+.method {
+    font-family: 'Spicy Rice', cursive;
+    font-size: 28px;
+    font-weight: bold;
+  }
