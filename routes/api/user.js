@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var userCtrl = require('../../controllers/user');
-// router.get('/', userCtrl.test)
-router.get('/doc', userCtrl.index) // shows the API doc page 
+
+
+// /*---------- Public Routes ----------*/
+router.post('/signup', userCtrl.signup);
+router.post('/login', userCtrl.login);
+
+
+
 // router.get('/', userCtrl.search) // The search page 
 router.get('/search', userCtrl.showAll) // The user would be able to see all the beauticians they searched for 
 router.get('/:id', userCtrl.showOne) //Show one beautician

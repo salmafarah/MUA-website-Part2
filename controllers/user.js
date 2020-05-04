@@ -1,10 +1,14 @@
 const Appt = require('../models/appointment'); 
 const User = require('../models/user'); 
 const Reviews = require ('../models/reviews')
+const jwt = require('jsonwebtoken')
+
+
+const SECRET = process.env.SECRET; 
 
   module.exports = {
-    // test,
-    index,
+    signup,
+    login, 
     showOne,
     showAll, 
     createAppt, 
@@ -17,15 +21,75 @@ const Reviews = require ('../models/reviews')
     showAllRevBeaut,
     createReview,
     updateReview
-
   }; 
 
-//shows the API doc page 
-function index(req, res) {
- res.render('doc')
+
+async function signup(req,res){
+  console.log(req)
+if (req.body.password.length < 8) return res.status(400).json({
+  error: 'Password is short'
+}); 
+
+  const user = new User(req.body);
+  try {
+    await user.save(); 
+  const token = createJWT(user);
+  res.json({
+    token
+  }); 
+} catch (err){
+    res.status(400).json(err)
+  }
+} 
+
+
+function createJWT(user){
+  return jwt.sign(
+    {user},
+    SECRET,
+    {expiresIn:'24h'}
+  ); 
+}
+
+async function login(req, res) {
+  console.log(req.body)
+  try {
+    const user = await User.findOne({
+      email: req.body.email
+    });
+    console.log(user)
+    if (!user) return res.status(401).json({
+      err: 'bad credentials'
+    });
+    user.comparePassword(req.body.password, (err, isMatch) => {
+      if (isMatch) {
+        const token = createJWT(user);
+        res.json({
+          token
+        });
+      } else {
+        return res.status(401).json({
+          err: 'bad password'
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err)
+    return res.status(401).json(err);
+  }
 }
 
 
+
+
+
+
+
+
+
+
+
+  
 // show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {
   let search = {}; 
