@@ -4,7 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage'; 
 import userService from '../../utils/userService';
+import Navbar from '../../components/Navbar/Navbar'; 
 import Homepage from '../HomePage/HomePage'; 
+import About from '../About/About';
 
 
 class App extends Component {
@@ -31,15 +33,16 @@ handleSignupOrLogin = () => {
   render() {
     return (
       <div>
+        <Navbar
+        handleLogout={this.handleLogout}
+        user={this.state.user}
+         />
         <header className="header-footer"> Pink Waves</header>
         <Switch>
           <Route 
             exact path="/"
               render={() => (
-                <Homepage
-                handleLogout={this.handleLogout}
-                user={this.state.user}
-                /> 
+                <Homepage/> 
               )}
                 /> 
           <Route
@@ -56,16 +59,16 @@ handleSignupOrLogin = () => {
           /> 
           <Route
             exact path="/about"
-            render={({history}) => (
+            render={() => (
               <About/>
             )}
           /> 
           <Route
-            exact path="/login"
-            render={({history}) => (
-              <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin}/>
+            exact path="/beauticianform"
+            render={() => (
+              <BeauticianPage/>
             )}
-          /> 
+          />
         </Switch>
       </div>
     ); 

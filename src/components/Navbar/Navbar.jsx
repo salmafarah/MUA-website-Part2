@@ -7,9 +7,9 @@ const Navbar = (props) => {
     console.log(props.user)
     let nav = props.user ? (
         <div> 
-            <Link to="/" className="Navbar-link" onClick={props.handleLogout}> Home </Link> 
-            <Link to="/about" className="Navbar-link" onClick={props.handleLogout}> About </Link> 
-            <Link to="/beauticianform" className="Navbar-link" onClick={props.handleLogout}> Become a Beautician </Link> 
+            <Link to="" className="Navbar-link"> Home </Link> 
+            <Link to="/beauticianform" className="Navbar-link"> Become a Beautician </Link> 
+            <Link to="/about" className="Navbar-link" > About </Link> 
             <Link to="" className="Navbar-link" onClick={props.handleLogout}> Log Out </Link> 
         </div> 
         ):(
@@ -17,7 +17,7 @@ const Navbar = (props) => {
             <Link to="/login" className='Navbar-link'>Log In</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <Link to="/signup" className='Navbar-link'>Sign Up</Link>
-            <Link to="" className="Navbar-link" onClick={props.handleLogout}> About </Link> 
+            <Link to="/about" className="Navbar-link" > About </Link> 
         </div>
         ); 
     return <div className="Navbar">{nav}</div>;
