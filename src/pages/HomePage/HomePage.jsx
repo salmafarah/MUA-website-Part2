@@ -1,11 +1,11 @@
 import React from 'react'
-// import './HomePage.css'; 
+import './Homepage.css'; 
 
 const HomePage = (props) => {
     console.log(props)
     return (
         <div>
-            <footer className="header-footer"></footer> 
+         
         </div>
 
     );

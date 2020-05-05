@@ -7,6 +7,7 @@ import userService from '../../utils/userService';
 import Navbar from '../../components/Navbar/Navbar'; 
 import Homepage from '../HomePage/HomePage'; 
 import About from '../About/About';
+import BeauticianPage from '../BeauticianPage/BeauticianPage'
 
 
 class App extends Component {
@@ -37,7 +38,6 @@ handleSignupOrLogin = () => {
         handleLogout={this.handleLogout}
         user={this.state.user}
          />
-        <header className="header-footer"> Pink Waves</header>
         <Switch>
           <Route 
             exact path="/"
@@ -69,15 +69,12 @@ handleSignupOrLogin = () => {
               <BeauticianPage/>
             )}
           />
-        </Switch>
+        </Switch> 
+        <footer className='footer'> Footer </footer>
       </div>
     ); 
   }
 }
-
-
-
-
 
 
 
