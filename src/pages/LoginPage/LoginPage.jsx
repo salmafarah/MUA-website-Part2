@@ -22,7 +22,7 @@ handleSubmit = async (e) => {
     try{
         await userService.login(this.state);
         this.props.handleSignupOrLogin();
-        this.props.history.push('/');
+        this.props.history.push('/homepage');
 
     } catch (err){
         alert ('Invalid Credentials')

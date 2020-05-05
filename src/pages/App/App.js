@@ -7,7 +7,9 @@ import userService from '../../utils/userService';
 import Navbar from '../../components/Navbar/Navbar'; 
 import Homepage from '../HomePage/HomePage'; 
 import About from '../About/About';
-import BeauticianPage from '../BeauticianPage/BeauticianPage'
+import BeauticianPage from '../BeauticianPage/BeauticianPage';
+import LandingPage from '../LandingPage/LandingPage'
+
 
 
 class App extends Component {
@@ -42,9 +44,15 @@ handleSignupOrLogin = () => {
           <Route 
             exact path="/"
               render={() => (
-                <Homepage/> 
+                <LandingPage /> 
               )}
                 /> 
+          <Route
+            exact path="/homepage"
+            render={() => (
+              <Homepage/>
+            )}
+          /> 
           <Route
             exact path="/signup"
             render={({history}) => (
@@ -70,7 +78,7 @@ handleSignupOrLogin = () => {
             )}
           />
         </Switch> 
-        <footer className='footer'> Footer </footer>
+        <footer className='footer'> Created by Salma Farah </footer>
       </div>
     ); 
   }
