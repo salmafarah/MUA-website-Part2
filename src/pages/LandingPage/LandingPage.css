@@ -15,8 +15,6 @@
     background-image: url(https://imgur.com/pjEFyxd.jpg) ;
     background-size: 1000px 100px;
     animation: animate 10s linear infinite;
-
-
   }
 
  .wave2 {
@@ -29,7 +27,6 @@
     opacity: 0.5;
     background-image: url(https://imgur.com/pjEFyxd.jpg);
     animation: animate-reverse 10s linear infinite;
-
   }
 
   .wave3 {
@@ -43,7 +40,6 @@
     background-image: url(https://imgur.com/pjEFyxd.jpg);
     animation-delay: -5s;
     animation: animate 20s linear infinite;
-
   }
   
   

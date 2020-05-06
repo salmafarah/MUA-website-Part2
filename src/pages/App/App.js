@@ -18,7 +18,7 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(), 
-      beautician: [], 
+      beauticians: [], 
     };
   }
 
@@ -41,16 +41,15 @@ handleUpdateBeaut = async updateBeautData => {
   () => this.props.history.push('/homepage'));
 }
 
+
 /*--- Lifecycle Methods ---*/
-// asyn componentDidMount(){
-//   const beautician = await userService.getAll(); 
-
-//   this.setState(
-//     {user: }
-//   )
-// }
-
-
+async componentDidMount(){
+  const NewBeaut = await userService.index(); 
+  this.setState(state =>({
+    beauticians: NewBeaut
+  }),
+  () => this.props.history.push('/homepage'))
+}
 
   render() {
     return (
@@ -69,7 +68,9 @@ handleUpdateBeaut = async updateBeautData => {
           <Route
             exact path="/homepage"
             render={() => (
-              <Homepage/>
+              <Homepage
+              beauticians={this.state.beauticians}
+              />
             )}
           /> 
           <Route

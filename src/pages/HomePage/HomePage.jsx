@@ -1,16 +1,17 @@
 import React from 'react'
 import './Homepage.css'; 
+import BeautList from '../../components/BeautList/BeautList'
 
 const HomePage = (props) => {
-    console.log(props)
-    return (
+    console.log(props.beauticians[0])
+    return(
     <div>
-        <div className='wrapper'>
-            <div className='wave'></div>
-            <div className='wave2'></div>
-            <div className='wave3'></div>
-        </div>
-
+        {props.beauticians.map(beaut => 
+            <BeautList
+             beaut={beaut}
+             key={beaut._id}
+             />
+        )}
     </div>
     );
 }; 

@@ -81,8 +81,9 @@ async function login(req, res) {
 }
   
 async function index(req, res) {
-  const beaut = await User.find({beautician:{$exists: true}
-  });
+  const beaut = await User.find({beautician:{$eq: true}}
+  );
+  // console.log(beaut)
   res.status(200).json(beaut);
 }
 

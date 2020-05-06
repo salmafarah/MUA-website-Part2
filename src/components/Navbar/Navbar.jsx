@@ -9,7 +9,7 @@ const Navbar = (props) => {
     let nav = props.user ? (
         <div className="navbar Navbar-light color shadow"> 
             <Link to="/homepage" className="navbar-brand">
-              <img className="navbar-brand" src="https://imgur.com/BB2fUgf.jpg" width="auto" height="60" className="d-inline-block align-top" alt=""/>
+              <img className="navbar-brand d-inline-block align-top" src="https://imgur.com/BB2fUgf.jpg" width="auto" height="60" alt=""/>
              </Link> 
                 <ul className="navbar justify-content-end color">
                   <Link to="/beauticianform" className="Navbar-link"><button className="color"> Become a Beautician </button> </Link>
@@ -20,7 +20,7 @@ const Navbar = (props) => {
         ):(
         <div className="navbar Navbar-light color shadow"> 
             <Link  to="" className="navbar-brand">
-                <img className="navbar-brand" src="https://imgur.com/BB2fUgf.jpg" width="auto" height="60" className="d-inline-block align-top" alt=""/>
+                <img className="navbar-brand d-inline-block align-top" src="https://imgur.com/BB2fUgf.jpg" width="auto" height="60" alt=""/>
              </Link> 
                 <ul className="navbar justify-content-end color">
                <Link to="/login" className='Navbar-link'> <button className="color"> Log In</button></Link>

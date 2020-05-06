@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import userService from '../../utils/userService';
 
 
 class BeauticianPage extends Component {
   state = {
     invalidForm: true, 
     formData:{
+    name:'', 
     profileImage: '',
     location: '', 
     avlDateandTime: '', 
@@ -12,8 +14,7 @@ class BeauticianPage extends Component {
     price: '', 
     description: '',
     clientImages: '', 
-
-    }
+    },
   };
 
   formRef = React.createRef(); 
@@ -37,6 +38,14 @@ class BeauticianPage extends Component {
         <h1>Become a Beautician</h1>
         <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
+          <label>Name</label>
+            <input
+              className="form-control"
+              name="name"
+              value={this.state.formData.name}
+              onChange={this.handleChange}
+              required
+            />
             <label>Location</label>
             <input
               className="form-control"
