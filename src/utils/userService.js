@@ -49,9 +49,24 @@ function login(creds) {
     }) => tokenService.setToken(token)); 
 }
 
+function createBeaut(user){
+    return fetch (`${BASE_URL}/newbeautician/`,{
+        method: 'PUT', 
+        headers:{'content-type': 'application/json', Authorization: 'Bearer ' + tokenService.getToken()},
+        body: JSON.stringify(user)
+    }).then(res => res.json()); 
+}
+
+function index(){
+    return fetch(BASE_URL + 'homepage')
+    .then(res => res.json())
+}
+
 export default {
     signup,
     getUser,
     logout,
     login, 
+    createBeaut,
+    index, 
 }

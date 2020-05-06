@@ -4,36 +4,28 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
+
 const app = express();
 
 require('dotenv').config(); 
 require('./config/database');
 
+
+// var userRouter = require('./routes/api/user'); 
+
 app.use(logger('dev')); 
 app.use(express.json()); 
-
-
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
+app.use(require('./config/auth'))
 app.use('/api/user', require('./routes/api/user'));
+
 
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-
-
-// var methodOverride = require('method-override');
-
-
-// var userRouter = require('./routes/api/user'); 
-
-
-// app.use('/api/user', userRouter);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -12,11 +12,13 @@ import LandingPage from '../LandingPage/LandingPage'
 
 
 
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: userService.getUser(), 
+      beautician: [], 
     };
   }
 
@@ -31,7 +33,24 @@ handleSignupOrLogin = () => {
   this.setState({ user: userService.getUser()});
 };
 
+handleUpdateBeaut = async updateBeautData => {
+  const updateBeaut = await userService.createBeaut(updateBeautData);
+  const updateUser = this.state.user._id === updateBeaut._id ? updateBeaut : this.state.user
+  this.setState(
+    { user: updateUser},
+  () => this.props.history.push('/homepage'));
+}
+
 /*--- Lifecycle Methods ---*/
+// asyn componentDidMount(){
+//   const beautician = await userService.getAll(); 
+
+//   this.setState(
+//     {user: }
+//   )
+// }
+
+
 
   render() {
     return (
@@ -74,7 +93,9 @@ handleSignupOrLogin = () => {
           <Route
             exact path="/beauticianform"
             render={() => (
-              <BeauticianPage/>
+              <BeauticianPage
+              handleUpdateBeaut={this.handleUpdateBeaut}
+              />
             )}
           />
         </Switch> 

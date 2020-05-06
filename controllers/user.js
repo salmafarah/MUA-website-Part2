@@ -9,6 +9,7 @@ const SECRET = process.env.SECRET;
   module.exports = {
     signup,
     login, 
+    index,
     showOne,
     showAll, 
     createAppt, 
@@ -26,20 +27,20 @@ const SECRET = process.env.SECRET;
 
 async function signup(req,res){
   console.log(req)
-if (req.body.password.length < 8) return res.status(400).json({
-  error: 'Password is short'
-}); 
-
-  const user = new User(req.body);
-  try {
-    await user.save(); 
-  const token = createJWT(user);
-  res.json({
-    token
+  if (req.body.password.length < 8) return res.status(400).json({
+    error: 'Password is short'
   }); 
-} catch (err){
-    res.status(400).json(err)
-  }
+
+    const user = new User(req.body);
+    try {
+      await user.save(); 
+    const token = createJWT(user);
+    res.json({
+      token
+    }); 
+  } catch (err){
+      res.status(400).json(err)
+    }
 } 
 
 
@@ -78,18 +79,13 @@ async function login(req, res) {
     return res.status(401).json(err);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
   
+async function index(req, res) {
+  const beaut = await User.find({beautician:{$exists: true}
+  });
+  res.status(200).json(beaut);
+}
+
 // show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {
   let search = {}; 
@@ -169,22 +165,17 @@ function deleteAppt(req, res) {
 };
 
 //create a beautician profile
-function createBeaut(req, res) {
+async function createBeaut(req, res) {
   req.body.beautician = true
-    User.findByIdAndUpdate(req.params.id, req.body, {new: true})
-      .then(beautician => {
-        res.json(beautician)
-    })
-      .catch(err => {
-        res.status(500).json("create error: " + err)
-    })
+  const createBeaut = await User.findByIdAndUpdate(req.user._id, req.body, {new: true})
+  res.status(200).json(createBeaut)
 }
 
 //update a beautician profile 
-function updateBeaut(req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then(beaut => {
-      res.status(200).json(beaut);
+async function updateBeaut(req, res) {
+  User.findByIdAndUpdate(req.user._id, req.body, {new: true})
+    .then(updateBeaut => {
+      res.status(200).json(updateBeaut);
   })
     .catch(err => {
       if (err) {
