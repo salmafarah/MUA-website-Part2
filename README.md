@@ -1,25 +1,25 @@
-## Pink Waves
+# Pink Waves
 
 Pink Waves was created to give beauticians and their clients a professional platform to communicate and conduct business. We want to provide users with the opportunity to find quaility beauticians, and beauticians the resources and tools to run a successful business.
 
-### The Objective
+## The Objective
 
-The objective of this project was to learn about React and create a fullstack app.This project is part 2 of a creating a full stack app. I initially built the backend (https://github.com/salmafarah/MUA-website-Part1), the following models were used: 
+The objective of this project is to learn about React and create a full stack webapp.This project is part 2 of creating a full stack webapp. I initially built the backend, which you can see here (https://github.com/salmafarah/MUA-website-Part1) the following models were used: 
 
 ![](https://imgur.com/i6r7gGt.jpg)
 
-### User 
+## User 
 
 This site was constructed with user stories in mind. 
 
-#### Trello Borad 
+### Trello Borad 
 ![](https://imgur.com/LNEmawC.jpg)
 
-### The Site
+## The Site
 
 The link provided will take you to the Pink Waves website : 
 
-### Website Layout 
+## Website Layout 
 Landing Page 
 
 ![](https://imgur.com/v4oS3Zq.jpg)
@@ -46,20 +46,20 @@ Form
 
 ![](https://imgur.com/1cpD8jF.jpg)
 
-### Build With 
+## Build With 
 -HTML 
 -CSS
 -JavaScript 
 -React
 -Lottie 
 
-### Next Steps and Goals 
+## Next Steps and Goals 
 
 I plan to contiune working on this project. My goal is to create the following: 
 
 1. Allow the user update and delete the beautician form.
 2. Show the user all of their appointments.
-3. Create a dynamiclly changing side nav bar that creates a "My Client" tab when a user becomes a beautician.
+3. Create a dynamically changing side nav bar that creates a "My Client" tab when a user becomes a beautician.
 4. Use Reat Bootstrap to create a Log In and Sign Up modal. 
 5. Allow the user to see a specific beauticians profile.
 6. Allow the beautician to upload images using AWS in the beautician form. 
