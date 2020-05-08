@@ -60,9 +60,9 @@ I plan to contiune working on this project. My goal is to create the following:
 1. Allow the user update and delete the beautician form.
 2. Show the user all of their appointments.
 3. Create a dynamically changing side nav bar that creates a "My Client" tab when a user becomes a beautician.
-4. Use Reat Bootstrap to create a Log In and Sign Up modal. 
+4. Use React Bootstrap to create a Log In and Sign Up modal. 
 5. Allow the user to see a specific beauticians profile.
 6. Allow the beautician to upload images using AWS in the beautician form. 
 7. Update the desgin and layout of the website. 
-8. Create a chatbox to allow users and beautician to communicate.
+8. Create a chatbox to allow users and beauticians to communicate.
 9. Create a payment system to allow the payment of services. 
