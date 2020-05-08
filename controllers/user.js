@@ -21,24 +21,23 @@ const SECRET = process.env.SECRET;
     showAllRevUser,
     showAllRevBeaut,
     createReview,
-    updateReview
+    updateReview,
+    createForm,
   }; 
 
 
 async function signup(req,res){
-  console.log(req)
   if (req.body.password.length < 8) return res.status(400).json({
     error: 'Password is short'
   }); 
-
-    const user = new User(req.body);
+  const user = new User(req.body);
     try {
       await user.save(); 
     const token = createJWT(user);
     res.json({
       token
     }); 
-  } catch (err){
+  } catch (err) {
       res.status(400).json(err)
     }
 } 
@@ -79,13 +78,22 @@ async function login(req, res) {
     return res.status(401).json(err);
   }
 }
+
+async function createForm(req,res) {
+  const user = await User.create(req.body);
+  res.status(201).json(user);
+}
+
   
 async function index(req, res) {
   const beaut = await User.find({beautician:{$eq: true}}
   );
-  // console.log(beaut)
   res.status(200).json(beaut);
 }
+
+
+// The below controller function have not been used in this project. They  will be used in the near future.
+
 
 // show all the beautician the user searched for (filter: location,typeOfService)
 function showAll(req, res) {

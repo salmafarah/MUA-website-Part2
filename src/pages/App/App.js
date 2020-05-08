@@ -9,9 +9,7 @@ import Homepage from '../HomePage/HomePage';
 import About from '../About/About';
 import BeauticianPage from '../BeauticianPage/BeauticianPage';
 import LandingPage from '../LandingPage/LandingPage'
-
-
-
+import Profile from '../Profile/Profile'
 
 class App extends Component {
   constructor() {
@@ -42,13 +40,11 @@ handleUpdateBeaut = async updateBeautData => {
 }
 
 
+
 /*--- Lifecycle Methods ---*/
-async componentDidMount(){
+async componentDidMount () {
   const NewBeaut = await userService.index(); 
-  this.setState(state =>({
-    beauticians: NewBeaut
-  }),
-  () => this.props.history.push('/homepage'))
+  this.setState({beauticians: NewBeaut})
 }
 
   render() {
@@ -64,7 +60,7 @@ async componentDidMount(){
               render={() => (
                 <LandingPage /> 
               )}
-                /> 
+            /> 
           <Route
             exact path="/homepage"
             render={() => (
@@ -89,6 +85,12 @@ async componentDidMount(){
             exact path="/about"
             render={() => (
               <About/>
+            )}
+          /> 
+          <Route
+            exact path="/profile"
+            render={() => (
+              <Profile/>
             )}
           /> 
           <Route

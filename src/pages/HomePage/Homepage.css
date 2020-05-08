@@ -1,1 +1,41 @@
+.form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.search{
+    height: 50px;
+    padding: 10px; 
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: white;
+}
+
+.location{
+    width: 400px;
+    margin: 10px;
+}
+
+.service{
+    width: 200px;
+}
+
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background-color: #e0e0eb;
+    border-radius: 25px;
+    border: none;
+    margin: 10px;
+}
+
+.search-btn:hover {
+    background-color: #e0e0eb;
+    cursor: pointer;
+}
+
+
+
+  

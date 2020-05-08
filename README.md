@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Pink Waves
 
-## Available Scripts
+Pink Waves was created to give beauticians and their clients a professional platform to communicate and conduct business. We want to provide users with the opportunity to find quaility beauticians, and beauticians the resources and tools to run a successful business.
 
-In the project directory, you can run:
+### The Objective
 
-### `npm start`
+The objective of this project was to learn about React and create a fullstack app.This project is part 2 of a creating a full stack app. I initially built the backend (https://github.com/salmafarah/MUA-website-Part1), the following models were used: 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![](https://imgur.com/i6r7gGt.jpg)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### User 
 
-### `npm test`
+This site was constructed with user stories in mind. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Trello Borad 
+![](https://imgur.com/LNEmawC.jpg)
 
-### `npm run build`
+### The Site
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The link provided will take you to the Pink Waves website : 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Website Layout 
+Landing Page 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](https://imgur.com/v4oS3Zq.jpg)
 
-### `npm run eject`
+Sign Up 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![](https://imgur.com/hW7gaqB.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Log-In 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![](https://imgur.com/BSSVcQ7.jpg)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+About 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://imgur.com/bAQAd1m.jpg)
 
-### Code Splitting
+HomePage 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![](https://imgur.com/6URFPPl.jpg)
 
-### Analyzing the Bundle Size
+Form 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![](https://imgur.com/1cpD8jF.jpg)
 
-### Making a Progressive Web App
+### Build With 
+-HTML 
+-CSS
+-JavaScript 
+-React
+-Lottie 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Next Steps and Goals 
 
-### Advanced Configuration
+I plan to contiune working on this project. My goal is to create the following: 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Allow the user update and delete the beautician form.
+2. Show the user all of their appointments.
+3. Create a dynamiclly changing side nav bar that creates a "My Client" tab when a user becomes a beautician.
+4. Use Reat Bootstrap to create a Log In and Sign Up modal. 
+5. Allow the user to see a specific beauticians profile.
+6. Allow the beautician to upload images using AWS in the beautician form. 
+7. Update the desgin and layout of the website. 
+8. Create a chatbox to allow users and beautician to communicate.
+9. Create a payment system to allow the payment of services. 

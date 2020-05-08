@@ -25,7 +25,7 @@ function signup(user) {
 }
 
 function getUser() {
-    return tokenService.getUserFromToken;
+    return tokenService.getUserFromToken();
 }
 
 function logout(){
@@ -62,11 +62,13 @@ function index(){
     .then(res => res.json())
 }
 
+
+
 export default {
     signup,
     getUser,
     logout,
     login, 
     createBeaut,
-    index, 
+    index,
 }

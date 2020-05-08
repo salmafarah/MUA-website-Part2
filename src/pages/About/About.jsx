@@ -1,12 +1,27 @@
 import React from 'react';
-// import './HomePage.css'; 
+import './About.css'; 
+import Lottie from '../../components/Lottie/Lottie1'
 
-const About = (props) => {
-    console.log(props)
+const About = () => {
     return (
-        <div>
-            <p> About page</p>
-        </div>
+    <div >
+        <div className="row About">
+            <div className="col-sm-6">
+                <div className=" rowcolor">
+                <h2>Pink Waves was created to give beauticians and their clients a professional platform to communicate and conduct business.
+                    We want to provide users with the opportunity to find quaility beauticians, and beauticians the resources to run a successful business.
+                </h2>
+                </div>
+            </div>
+                <div className="col-lg-4">
+                    <div>
+                    <div className="card-body textbox">
+                    < Lottie/>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
 
     );
 }; 

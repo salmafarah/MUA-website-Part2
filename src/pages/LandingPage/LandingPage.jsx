@@ -1,10 +1,10 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom'; 
 import "./LandingPage.css"
+import Waves from '../../components/Waves/Waves'
 
 function LandingPage(){
     return(
-
     <div className="">
         <div className="row LandingPage">
             <div className="col-sm-6">
@@ -12,24 +12,16 @@ function LandingPage(){
                 <img className="image"src="https://imgur.com/qptqOC4.jpg" alt=""/>
                 </div>
             </div>
-            <div className="col-lg-4">
-                <div>
-                <div className="card-body textbox">
-                    <p className="card-text text">Get all of your essential care needs meet with help from our professionals</p>
-                    <Link to="/signup" className="text"> <button>Get Started </button></Link> 
+                <div className="col-lg-4">
+                    <div className="LandingText">
+                        <p>Get all of your essential beauty care needs met with help from our professionals</p>
+                        <Link to="/signup"> <button className="LandingPage-btn">Get Started </button></Link>
+                    </div>
                 </div>
             </div>
-         </div>
+                <Waves/>
         </div>
-         <div className='wrapper'>
-             <div className='wave'></div>
-             <div className='wave2'></div>
-             <div className='wave3'></div>
-        </div>
-    </div>
-
-    )
-
+      )
 }
 
 

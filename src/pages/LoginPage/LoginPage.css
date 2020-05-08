@@ -1,7 +1,18 @@
 .LoginPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+body{
+  background-image: url("https://imgur.com/8V7OGkq.jpg");
+}
+
+header{
+  font-size: 40px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
