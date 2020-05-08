@@ -22,7 +22,6 @@ const SECRET = process.env.SECRET;
     showAllRevBeaut,
     createReview,
     updateReview,
-    createForm,
   }; 
 
 
@@ -79,16 +78,19 @@ async function login(req, res) {
   }
 }
 
-async function createForm(req,res) {
-  const user = await User.create(req.body);
-  res.status(201).json(user);
-}
 
   
 async function index(req, res) {
   const beaut = await User.find({beautician:{$eq: true}}
   );
   res.status(200).json(beaut);
+}
+
+//create a beautician profile
+async function createBeaut(req, res) {
+  req.body.beautician = true
+  const createBeaut = await User.findByIdAndUpdate(req.user._id, req.body, {new: true})
+  res.status(200).json(createBeaut)
 }
 
 
@@ -173,12 +175,6 @@ function deleteAppt(req, res) {
   });
 };
 
-//create a beautician profile
-async function createBeaut(req, res) {
-  req.body.beautician = true
-  const createBeaut = await User.findByIdAndUpdate(req.user._id, req.body, {new: true})
-  res.status(200).json(createBeaut)
-}
 
 //update a beautician profile 
 async function updateBeaut(req, res) {

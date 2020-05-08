@@ -38,14 +38,12 @@ handleUpdateBeaut = async updateBeautData => {
     { user: updateUser},
   () => this.props.history.push('/homepage'));
 }
-
-
+handlegetBeaut = beauticians => {
+  this.setState({beauticians: beauticians});
+}
 
 /*--- Lifecycle Methods ---*/
-async componentDidMount () {
-  const NewBeaut = await userService.index(); 
-  this.setState({beauticians: NewBeaut})
-}
+
 
   render() {
     return (
@@ -57,49 +55,50 @@ async componentDidMount () {
         <Switch>
           <Route 
             exact path="/"
-              render={() => (
+              render={() => 
                 <LandingPage /> 
-              )}
+              }
             /> 
           <Route
             exact path="/homepage"
-            render={() => (
+            render={() => 
               <Homepage
               beauticians={this.state.beauticians}
+              handlegetBeaut={this.handlegetBeaut}
               />
-            )}
+            }
           /> 
           <Route
             exact path="/signup"
-            render={({history}) => (
+            render={({history}) => 
               <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin}/>
-            )}
+            }
           /> 
           <Route
             exact path="/login"
-            render={({history}) => (
+            render={({history}) => 
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin}/>
-            )}
+            }
           /> 
           <Route
             exact path="/about"
-            render={() => (
+            render={() => 
               <About/>
-            )}
+            }
           /> 
           <Route
             exact path="/profile"
-            render={() => (
+            render={() => 
               <Profile/>
-            )}
+            }
           /> 
           <Route
             exact path="/beauticianform"
-            render={() => (
+            render={() => 
               <BeauticianPage
               handleUpdateBeaut={this.handleUpdateBeaut}
               />
-            )}
+            }
           />
         </Switch> 
         <footer className='footer'> Created by Salma Farah </footer>

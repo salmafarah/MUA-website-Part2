@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Homepage.css'; 
 import BeautList from '../../components/BeautList/BeautList'
 import SideNav from '../../components/SideNav/SideNav'
+import userService from '../../utils/userService'
 
-const HomePage = (props) => {
-    console.log(props.beauticians[0])
-    return(
+class HomePage extends Component {
+  async componentDidMount() {
+    const beauticians = await userService.index(); 
+    this.props.handlegetBeaut(beauticians);
+  }
+
+  render() {
+   return(
     <div>
       <form>
         <div className="form-box">
@@ -14,7 +20,7 @@ const HomePage = (props) => {
           <button className="search-btn" type="button">Search </button>
         </div>
       </form>
-        {props.beauticians.map(beaut => 
+        {this.props.beauticians.map(beaut => 
             <BeautList
              beaut={beaut}
              key={beaut._id}
@@ -24,5 +30,6 @@ const HomePage = (props) => {
     </div>
     );
 }; 
+}
 
 export default HomePage;
