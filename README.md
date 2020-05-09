@@ -17,7 +17,7 @@ This site was constructed with user stories in mind.
 
 ## The Site
 
-The link provided will take you to the Pink Waves website : 
+The link provided will take you to the Pink Waves website:  https://pinkwaves.herokuapp.com/
 
 ## Website Layout 
 Landing Page 
